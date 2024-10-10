@@ -37,7 +37,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:prd": "npm run build && mv build docs && replace-in-file 'href=\"/' 'href=\"./' docs/index.html && replace-in-file 'src=\"/' 'src=\"./' docs/index.html"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +59,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-scroll": "^1.8.10"
+    "@types/react-scroll": "^1.8.10",
+    "replace-in-file": "^8.2.0"
   }
 }
