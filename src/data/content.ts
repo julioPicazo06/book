@@ -5,12 +5,8 @@ import OryMago from 'img/fizhart/OryMago.png'
 import ilustracion from 'img/fizhart/illustracion.png'
 import trabajando from 'img/fizhart/trabajando.png'
 import { imgContentIllustration, imgContentWeb} from './types'
-import fizh1  from 'img/front/fizhart1.png';
-import fizh2 from 'img/front/fizhart2.png';
-import fizh3 from 'img/front/fizhart3.png';
-import  c1  from 'img/front/c1.png';
-import c2  from 'img/front/c2.png';
-import  c3  from 'img/front/c3.png';
+
+import { c1, c2, c3, fizh1, fizh2, fizh3  } from  'utils/img'
 
 
 export const contentIllustration:imgContentIllustration[] = [

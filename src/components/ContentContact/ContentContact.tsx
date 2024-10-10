@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { Content } from 'components/StylesComponents/ContentStyles'
-import contactoImg from 'img/3.png';
-
+import { contactoImg } from 'utils/img'
 interface PropsContent {
   handleClose: Function
 }
@@ -87,7 +86,7 @@ const ContenidoContact: FC<PropsContent> = ({
           </form>
         </div>
         <div className='col-xs-6 col-sm-6 col-md-6 col-lg-6 flex justificar centrar column'>
-              <img className="img-fluid" src={contactoImg}/>
+              <img className="img-fluid" src={contactoImg} alt='contactoImg'/>
         </div>
         </div>
       </div>

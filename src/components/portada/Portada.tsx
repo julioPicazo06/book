@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import cat from '../../img/cat.png'
 import { Link } from "react-scroll";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 export const Portada: FC<any> = () => {
@@ -53,7 +54,7 @@ export const Portada: FC<any> = () => {
                         duration={500}>
 
                         <span className="btn btn-dark">
-                            <i className="material-icons  flecha ">arrow_back_ios_new</i>
+                           <ExpandMoreIcon/>
                         </span>
                     </Link>
                 </div>
