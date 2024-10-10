@@ -1,3 +1,25 @@
+## Welcome to my Book
+
+```
+To add an image in Markdown, you can use the following syntax:
+
+```
+![Alt Text](path/to/image.jpg)
+```
+
+Replace `Alt Text` with a descriptive text for the image, and `path/to/image.jpg` with the actual path to your image file.
+
+For example, if your image is located in the same directory as your README.md file, you can use:
+
+```
+![My Image](src/img/cat.png)
+```
+
+Make sure to replace `image.jpg` with the actual name of your image file.
+
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
