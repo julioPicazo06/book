@@ -38,7 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:prd": "npm run build && mv build docs && replace-in-file 'href=\"/' 'href=\"./' docs/index.html && replace-in-file 'src=\"/' 'src=\"./' docs/index.html",
+    "build:prd": "rm -rf build docs && npm run build && mv build docs && sed -i '' 's|href=\"/|href=\"./|g' docs/index.html && sed -i '' 's|src=\"/|src=\"./|g' docs/index.html",
     "optimize-images": "node optimize-images.mjs"
   },
   "eslintConfig": {
