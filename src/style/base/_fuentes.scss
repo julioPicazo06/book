@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+$Mouse: 'Mouse Memoirs', sans-serif;
+$Oswald: 'Oswald', sans-serif;
+$kaushan : 'Kaushan Script', cursive;
+$roboto :  'Roboto', sans-serif;
+
+
+
+.mouse {
+    font-family: $Oswald;
+}
+
+.letraCursiva {
+    font-family: $kaushan;
+}
+.roboto{
+    font-family: $roboto;
+}
+
+.bold {
+    font-weight: bold!important;
+}
+
