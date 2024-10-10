@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import contactoImg from 'img/3.png'
 import { Content } from 'components/StylesComponents/ContentStyles'
+import contactoImg from 'img/3.png';
 
 interface PropsContent {
   handleClose: Function
