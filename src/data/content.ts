@@ -2,7 +2,7 @@ import cangrejo from 'img/fizhart/krab.png'
 import murcielago from 'img/fizhart/murci.png'
 import pollo from 'img/fizhart/pollo.png'
 import OryMago from 'img/fizhart/OryMago.png'
-import ilustracion from 'img/fizhart/illustracion.png'
+import ilustracion from 'img/fizhart/illustracionF.png'
 import trabajando from 'img/fizhart/trabajando.png'
 import { imgContentIllustration, imgContentWeb} from './types'
 
