@@ -2,9 +2,12 @@ import { FC } from 'react'
 import cat from '../../img/cat.png'
 import { Link } from "react-scroll";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { coverData } from 'data/coverData';
 
 
-export const Portada: FC<any> = () => {
+export const Cover: FC<any> = () => {
+
+    
     return (
         <section className="contenedor-portada portada" >
 
@@ -21,7 +24,7 @@ export const Portada: FC<any> = () => {
                 <div>
                     <div className=" rotar ">
                         <span className="letraCursiva tituloC ">
-                            Julio Eduardo Picazo Rodriguez
+                            { coverData.title }
                         </span>
 
                     </div>
@@ -34,10 +37,7 @@ export const Portada: FC<any> = () => {
 
 
                     <p className="textoCapital statement">
-                        &nbsp;
-                        Transformo ideas en código funcional y eficiente...
-                        &nbsp; &nbsp;y también hago dibujitos.
-                        &nbsp;
+                        { coverData.statement }
 
                     </p>
 
