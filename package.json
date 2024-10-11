@@ -39,7 +39,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:prd": "rm -rf build docs && npm run build && mv build docs && find docs -name '*.html' -exec sed -i '' 's|src=\"/|src=\"./|g' {} + && find docs -name '*.html' -exec sed -i '' 's|href=\"/|href=\"./|g' {} +",
+    "build:prd": "rm -rf build docs && npm run build && mv build docs && find docs -name '*.html' -exec sed -i '' 's|src=\"/|src=\"./|g' {} + && find docs -name '*.html' -exec sed -i '' 's|href=\"/|href=\"./|g' {} + && sed -i '' 's|\"/static|\"./static|g' docs/asset-manifest.json",
     "optimize-images": "node optimize-images.mjs",
     "deploy:gh-pages": "npm run build:prd && npx gh-pages -d build",
     "version:patch": "npm version patch && git push && git push --tags",
