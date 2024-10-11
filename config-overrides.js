@@ -9,7 +9,7 @@ module.exports = override(
       {
         loader: 'url-loader',
         options: {
-          limit: 61440, // Aumenta el límite a 10KB
+          limit: 1048576, // Aumenta el límite a 10KB
           name: 'static/media/[name].[hash:8].[ext]',
         },
       },
