@@ -1,4 +1,3 @@
-import cangrejo from 'img/fizhart/krab.png'
 import murcielago from 'img/fizhart/murci.png'
 import pollo from 'img/fizhart/pollo.png'
 import OryMago from 'img/fizhart/OryMago.png'
@@ -7,6 +6,7 @@ import trabajando from 'img/fizhart/trabajando.png'
 import { imgContentIllustration, imgContentWeb} from './types'
 
 import { c1, c2, c3, fizh1, fizh2, fizh3  } from  'utils/img'
+import cangrejo from 'img/fizhart/krab.png';
 
 
 export const contentIllustration:imgContentIllustration[] = [

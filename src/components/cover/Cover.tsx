@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import cat from '../../img/cat.png'
+import cat from 'img/cat.png'
 import { Link } from "react-scroll";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { coverData } from 'data/coverData';

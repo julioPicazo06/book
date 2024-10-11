@@ -18,12 +18,14 @@
     "@types/react-dom": "^18.3.0",
     "@types/styled-components": "^5.1.34",
     "bootstrap": "^5.3.3",
+    "customize-cra": "^1.0.0",
     "jquery": "^3.7.1",
     "npm-version": "^1.1.0",
     "p5": "^1.11.0",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "react": "^18.3.1",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
     "react-p5": "^1.4.1",
@@ -35,16 +37,18 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "build:prd": "rm -rf build docs && npm run build && mv build docs && sed -i '' 's|href=\"/|href=\"./|g' docs/index.html && sed -i '' 's|src=\"/|src=\"./|g' docs/index.html",
+    "build:prd": "rm -rf build docs && npm run build && mv build docs && find docs -name '*.html' -exec sed -i '' 's|src=\"/|src=\"./|g' {} + && find docs -name '*.html' -exec sed -i '' 's|href=\"/|href=\"./|g' {} + && sed -i '' 's|\"/static|\"./static|g' docs/asset-manifest.json",
     "optimize-images": "node optimize-images.mjs",
     "deploy:gh-pages": "npm run build:prd && npx gh-pages -d build",
     "version:patch": "npm version patch && git push && git push --tags",
     "version:minor": "npm version minor && git push && git push --tags",
-    "version:major": "npm version major && git push && git push --tags"
+    "version:major": "npm version major && git push && git push --tags",
+    "start:prd": "serve -s docs",
+    "optimize:build": "npm run optimize-images && npm run build:prd"
   },
   "eslintConfig": {
     "extends": [
@@ -66,9 +70,12 @@
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.10",
+    "file-loader": "^6.2.0",
     "imagemin": "^9.0.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^10.0.0",
-    "replace-in-file": "^8.2.0"
+    "replace-in-file": "^8.2.0",
+    "serve": "^14.2.3",
+    "url-loader": "^4.1.1"
   }
 }

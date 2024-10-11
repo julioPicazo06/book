@@ -3,6 +3,10 @@ import reactImg from 'img/skills/react.png';
 import jquery from 'img/skills/jquery.jpg';
 import javaScriptImg from 'img/skills/javaScript.png';
 import nodejs from 'img/skills/nodejs.png'
+import gato from 'img/skills/gato.png'
+
+
+
 
 export interface ImgSkills {
     src : any ,
@@ -35,6 +39,10 @@ export const imgSkills :ImgSkills[]  = [
     {
         src: nodejs,
         alt: 'nodejs'
+    },
+    {
+        src: gato,
+        alt: 'gato'
     }
 ];
 
