@@ -1,32 +1,31 @@
 {
   "files": {
     "main.css": "/static/css/main.3e962fd9.css",
-    "main.js": "/static/js/main.36de5e96.js",
-    "static/media/fizhart1.png": "/static/media/fizhart1.7e7937fdbe99188cf496.png",
-    "static/media/fizhart3.png": "/static/media/fizhart3.692dbcb34cb5fb028c15.png",
-    "static/media/c2.png": "/static/media/c2.6ea42e7bd87ffc765ef8.png",
-    "static/media/c3.png": "/static/media/c3.9d2337a4558f30b5e1cc.png",
-    "static/media/fizhart2.png": "/static/media/fizhart2.09f002899414d7a5cb65.png",
-    "static/media/cat.png": "/static/media/cat.338b1b4bcf184d919814.png",
-    "static/media/c1.png": "/static/media/c1.3da667eb625e6e3886b3.png",
-    "static/media/yo.png": "/static/media/yo.74073ba38b67817df80c.png",
+    "main.js": "/static/js/main.01586750.js",
+    "static/media/fizhart1.png": "/static/media/fizhart1.bb5cf949ca0d9d9dbbd5.png",
+    "static/media/fizhart3.png": "/static/media/fizhart3.83657e1ebdb1e49e27db.png",
+    "static/media/c3.png": "/static/media/c3.8cacaa432247e0cea362.png",
+    "static/media/c2.png": "/static/media/c2.be63c1c4961f83bdc3a2.png",
+    "static/media/fizhart2.png": "/static/media/fizhart2.749cb9172f7774ded34b.png",
+    "static/media/cat.png": "/static/media/cat.3c5f3e48023dac7cb029.png",
+    "static/media/c1.png": "/static/media/c1.fbfd35844a6006b6dbe7.png",
+    "static/media/yo.png": "/static/media/yo.dab92eb7520cb5993765.png",
     "static/media/illustracion.png": "/static/media/illustracion.9df3ad43d385ea5374f2.png",
     "static/media/illustracionF.png": "/static/media/illustracionF.9df3ad43d385ea5374f2.png",
-    "static/media/3.png": "/static/media/3.c8715e811cfee148bafc.png",
-    "static/media/trabajando.png": "/static/media/trabajando.c8715e811cfee148bafc.png",
-    "static/media/OryMago.png": "/static/media/OryMago.bb24d57757c95315ab31.png",
-    "static/media/krab.png": "/static/media/krab.39fa523abec767e169fe.png",
-    "static/media/pollo.png": "/static/media/pollo.f2f99db204ae127900c5.png",
-    "static/media/gato.png": "/static/media/gato.74d4631ecab7330cfd47.png",
-    "static/media/contacto.png": "/static/media/contacto.4536bb9801a78b89df93.png",
-    "static/media/frontEnd.png": "/static/media/frontEnd.aea6f574efe3cabdddd7.png",
-    "static/media/murci.png": "/static/media/murci.8bd78695a27bec06602f.png",
+    "static/media/OryMago.png": "/static/media/OryMago.812ae905540e757071ab.png",
+    "static/media/3.png": "/static/media/3.ab0a62aa167fdc2b34ea.png",
+    "static/media/trabajando.png": "/static/media/trabajando.ab0a62aa167fdc2b34ea.png",
+    "static/media/krab.png": "/static/media/krab.6c29a177711613739ea9.png",
+    "static/media/pollo.png": "/static/media/pollo.5bf16eeecce1b13dc12a.png",
+    "static/media/contacto.png": "/static/media/contacto.968702cf75306b60e86d.png",
+    "static/media/gato.png": "/static/media/gato.b5280f1838698b2e01c4.png",
+    "static/media/frontEnd.png": "/static/media/frontEnd.7dc1155f88c998cdb465.png",
     "index.html": "/index.html",
     "main.3e962fd9.css.map": "/static/css/main.3e962fd9.css.map",
-    "main.36de5e96.js.map": "/static/js/main.36de5e96.js.map"
+    "main.01586750.js.map": "/static/js/main.01586750.js.map"
   },
   "entrypoints": [
     "static/css/main.3e962fd9.css",
-    "static/js/main.36de5e96.js"
+    "static/js/main.01586750.js"
   ]
 }
