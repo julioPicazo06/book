@@ -1,4 +1,4 @@
-import cangrejo from 'img/fizhart/krab.png'
+import cangrejo from 'img/skills/krab.png'
 import murcielago from 'img/fizhart/murci.png'
 import pollo from 'img/fizhart/pollo.png'
 import OryMago from 'img/fizhart/OryMago.png'
