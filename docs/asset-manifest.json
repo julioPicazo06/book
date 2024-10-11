@@ -1,31 +1,20 @@
 {
   "files": {
     "main.css": "./static/css/main.3e962fd9.css",
-    "main.js": "./static/js/main.2c7f1944.js",
-    "static/media/fizhart1.png": "./static/media/fizhart1.17c0b891fc3630b3124a.png",
-    "static/media/c3.png": "./static/media/c3.adf84714e87e4291d8b9.png",
-    "static/media/c2.png": "./static/media/c2.c41903371b316117ea4f.png",
-    "static/media/fizhart3.png": "./static/media/fizhart3.a933b1bf0056a43ac8b4.png",
-    "static/media/c1.png": "./static/media/c1.11f0fd2dd679a3fae39b.png",
-    "static/media/fizhart2.png": "./static/media/fizhart2.52032c03d195c192abd7.png",
-    "static/media/cat.png": "./static/media/cat.6bdf4b544205f7292ae1.png",
-    "static/media/yo.png": "./static/media/yo.0fb6f45240d6fb346c24.png",
-    "static/media/illustracion.png": "./static/media/illustracion.9df3ad43d385ea5374f2.png",
-    "static/media/illustracionF.png": "./static/media/illustracionF.9df3ad43d385ea5374f2.png",
-    "static/media/OryMago.png": "./static/media/OryMago.072abce3359eba056f05.png",
-    "static/media/3.png": "./static/media/3.2be15a50f5258f00e88a.png",
-    "static/media/trabajando.png": "./static/media/trabajando.2be15a50f5258f00e88a.png",
-    "static/media/krab.png": "./static/media/krab.a68d70c75415bde9e313.png",
-    "static/media/gato.png": "./static/media/gato.c691f1bca79db0e1eff6.png",
-    "static/media/pollo.png": "./static/media/pollo.0c720d5c386f14f04bae.png",
-    "static/media/frontEnd.png": "./static/media/frontEnd.339867040c671a5d1970.png",
-    "static/media/contacto.png": "./static/media/contacto.0f8379abd63534ad5af0.png",
+    "main.js": "./static/js/main.3a0fe774.js",
+    "static/media/fizhart1.png": "./static/media/fizhart1.17c0b891.png",
+    "static/media/c3.png": "./static/media/c3.adf84714.png",
+    "static/media/c2.png": "./static/media/c2.c4190337.png",
+    "static/media/fizhart3.png": "./static/media/fizhart3.a933b1bf.png",
+    "static/media/c1.png": "./static/media/c1.11f0fd2d.png",
+    "static/media/fizhart2.png": "./static/media/fizhart2.567476f4.png",
+    "static/media/cat.png": "./static/media/cat.295b6e84.png",
     "index.html": "/index.html",
     "main.3e962fd9.css.map": "./static/css/main.3e962fd9.css.map",
-    "main.2c7f1944.js.map": "./static/js/main.2c7f1944.js.map"
+    "main.3a0fe774.js.map": "./static/js/main.3a0fe774.js.map"
   },
   "entrypoints": [
     "static/css/main.3e962fd9.css",
-    "static/js/main.2c7f1944.js"
+    "static/js/main.3a0fe774.js"
   ]
 }
