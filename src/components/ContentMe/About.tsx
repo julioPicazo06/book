@@ -2,11 +2,11 @@
 
 import React from 'react'
 
-// import gato from 'img/gato.png'
 
 // skils 
 
 import GitHubIcon from '@mui/icons-material/GitHub';
+import gato from 'img/skills/gato.png';
 
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
           <div className='row mt-5'>
 
             <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-              {/* <img className="img-fluid acerca" src={gato} alt='gato' /> */}
+              <img className="img-fluid acerca" src={gato} alt='gato' />
             </div>
 
             <p className='f-20 col-xs-12 col-sm-12 col-md-9 col-lg-9 semblansa'>

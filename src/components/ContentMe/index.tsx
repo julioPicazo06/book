@@ -8,7 +8,6 @@ import { Content } from 'components/StylesComponents/ContentStyles';
 import TimeLineEducation from './TimeLineEducation';
 import About from './About';
 import Skills from './Skills';
-import { contentSkills } from 'data/imgContent'
 
 
 interface ContenidoYoModel {
