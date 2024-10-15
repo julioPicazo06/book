@@ -4,9 +4,7 @@ import { Link } from "react-scroll";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { coverData } from 'data/coverData';
 
-
 export const Cover: FC<any> = () => {
-
     
     return (
         <section className="contenedor-portada portada" >
@@ -37,7 +35,7 @@ export const Cover: FC<any> = () => {
 
 
                     <p className="textoCapital statement">
-                        { coverData.statement }
+                        {coverData.statement }
 
                     </p>
 

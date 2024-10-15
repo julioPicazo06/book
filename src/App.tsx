@@ -3,7 +3,7 @@ import { Cover } from 'components/cover/Cover'
 import { MenuGeneral } from 'components/GeneralMenu/GeneralMenu'
 import {  coverColors, coverColorsGreens } from 'data/colorData';
 import { isColorDark } from 'utils/isDarkColor';
-
+import { coverData } from 'data/coverData';
 
 export const App = () => {
 
@@ -25,7 +25,7 @@ export const App = () => {
             <section id="portada" style={{
             overflow: 'auto'
         }}>
-                <Cover />
+            <Cover   coverData={coverData}/>
             </section>
             <section id="menu" >
                 <MenuGeneral/>
