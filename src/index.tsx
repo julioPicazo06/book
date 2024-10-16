@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import { App } from './App';
 import './style/style.scss';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Provider } from 'react-redux';
+import store from './store/store';
 const theme = createTheme({
   palette: {
     primary: {
@@ -18,11 +20,13 @@ const theme = createTheme({
 
 
 ReactDOM.render(
-  <React.StrictMode>
+ <Provider store={store}>
+     <React.StrictMode>
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
+ </Provider>,
   document.getElementById('root')
 );
 

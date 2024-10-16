@@ -5,8 +5,6 @@ import javaScriptImg from 'img/skills/javaScript.png';
 import nodejs from 'img/skills/nodejs.png'
 
 
-
-
 export interface ImgSkills {
     src : any ,
     alt : string
@@ -43,6 +41,17 @@ export const imgSkills :ImgSkills[]  = [
 
 export const contentSkills :ContentSkills = {
     title: 'Skills',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quod.',
+    description: '',
     imgSkills
 }
+
+export interface SkillData {
+    contentSkills: ContentSkills;
+    imgSkills: ImgSkills[];
+}
+
+export const skillData : SkillData = {
+    contentSkills: contentSkills,
+    imgSkills: imgSkills,
+};
+

@@ -3,16 +3,15 @@ import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import contactoImg from 'img/3.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { setForm } from 'store/reducers/formSlice';
+import { RootState } from 'store/store';
 
 
 const Form = () => {
-    const [emailContetent, setEmailContetent] = useState({
-        name: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: ''
-    })
+  const dispatch = useDispatch();
+  const { name, lastName, email, subject, message } = useSelector((state: RootState) => state.form);
+
 
     const formik = useFormik({
         initialValues: {
@@ -30,9 +29,7 @@ const Form = () => {
           message: Yup.string().required('message es requerido')
         }),
         onSubmit: values => {
-            setEmailContetent({
-                ...values
-            })
+            dispatch(setForm({...values}));
         }
       });
 
@@ -127,6 +124,9 @@ const Form = () => {
           <div className='col-xs-6 col-sm-6 col-md-6 col-lg-6 flex justificar centrar column '>
             <img className="img-fluid" src={contactoImg} alt='contactoImg' />
           </div>
+          <code>
+            <pre>{JSON.stringify({ name, lastName, email, subject, message } , null, 2)}</pre>
+          </code>
         </div>
   )
 }

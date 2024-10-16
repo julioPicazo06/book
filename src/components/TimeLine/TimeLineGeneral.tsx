@@ -9,16 +9,11 @@ import Paper from '@mui/material/Paper';
 import { Theme } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 
-
-
-
-
-const TimeLineGeneral:FC<TimeLineContentModel> = ({nombre , fecha, puesto}:TimeLineContentModel) => {
+const TimeLineGeneral:FC<TimeLineContentModel> = ({name , date, position}:TimeLineContentModel) => {
     const useStyles = makeStyles((theme:Theme) => ({
         paper: {
           padding: '6px 16px',
           fontFamily: 'Oswald',
-          
         },
         secondaryTail: {
           backgroundColor: theme.palette.secondary.main,
@@ -32,7 +27,7 @@ const TimeLineGeneral:FC<TimeLineContentModel> = ({nombre , fecha, puesto}:TimeL
         <TimelineItem className="mouse">
         <TimelineOppositeContent>
           <Typography variant="body2" color="textSecondary">
-            {fecha}
+            {date}
           </Typography>
         </TimelineOppositeContent>
         <TimelineSeparator style={{
@@ -49,8 +44,8 @@ const TimeLineGeneral:FC<TimeLineContentModel> = ({nombre , fecha, puesto}:TimeL
         </TimelineSeparator>
         <TimelineContent >
           <Paper elevation={3} className={classes.paper}>
-            <h3> {nombre}</h3>
-            <p>{puesto}</p>
+            <h3> {name}</h3>
+            <p>{position}</p>
           </Paper>
         </TimelineContent>
       </TimelineItem>

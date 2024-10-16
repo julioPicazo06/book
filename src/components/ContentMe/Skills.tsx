@@ -1,12 +1,12 @@
-import { contentSkills } from 'data/imgContent'
+import {  SkillData } from 'data/imgContent'
 import React from 'react'
 
 
-const Skills = () => {
+const Skills = ({skillData}: { skillData: SkillData }) => {
   return (
     <div className="row">
     <div className="flex justificar centrar">
-      <h3>{contentSkills.title } </h3>
+      <h3>{skillData.contentSkills.title } </h3>
     </div>
 
   
@@ -14,7 +14,7 @@ const Skills = () => {
       flexWrap: 'wrap',
     }
     }>
-      {contentSkills.imgSkills.map(({src, alt}) => (<img className="img-fluid imagenSkills" src={src} alt={alt} />))}
+      {skillData.imgSkills.map(({src, alt}) => (<img className="img-fluid imagenSkills" src={src} alt={alt} />))}
     </div>
 
 

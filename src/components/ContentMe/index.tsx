@@ -1,22 +1,55 @@
 
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import {
   JobsTimeLineContent,
   TimeLineContent
 } from 'data/TimeLineContent'
 import { Content } from 'components/StylesComponents/ContentStyles';
-import TimeLineEducation from './TimeLineEducation';
 import About from './About';
 import Skills from './Skills';
+import { useSelector, useDispatch} from 'react-redux';
+import TimeLine from './TimeLine';
+import { setEducationHistory, setJobHistory } from 'store/reducers/historySlice';
+import { RootState } from 'store/store';
+import { fetchAndDispatch } from 'utils/fetchAndDispatch';
+import { endpoints } from 'utils/endpoints';
+import { skillData } from 'data/imgContent';
+import { aboutData } from 'data/aboutData';
 
 
 interface ContenidoYoModel {
   handleClose: Function
 }
 
-export const ContenidoYo: FC<ContenidoYoModel> = ({
+export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   handleClose
 }: ContenidoYoModel): JSX.Element => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchAndDispatch({
+      url : endpoints['jobs'] ,
+      staticContent: JobsTimeLineContent,
+      action: setEducationHistory,
+      dispatch,
+      flag: false,
+    })
+
+    fetchAndDispatch({
+      url : endpoints['grades'] ,
+      staticContent: TimeLineContent,
+      action: setJobHistory,
+      dispatch,
+      flag: false,
+    })
+
+  }, [])
+
+
+
+  const { jobHistory , educationHistory } = useSelector((state: RootState) => state.history)
+
+
   return (
     <>
       <Content color={'#56C596'}>
@@ -40,10 +73,10 @@ export const ContenidoYo: FC<ContenidoYoModel> = ({
 
             
         <section className='container mouse'>
-          <About />
-          <Skills />
-          <TimeLineEducation EducationTimeLineContent={TimeLineContent} title="Experiencia Laboral" />
-          <TimeLineEducation EducationTimeLineContent={JobsTimeLineContent} title="Educacion" />
+          <About aboutData={aboutData} />
+          <Skills skillData={ skillData} />
+          <TimeLine EducationTimeLineContent={educationHistory } title="Experiencia Laboral" />
+          <TimeLine EducationTimeLineContent={jobHistory} title="Educacion" />
         </section>
 
       </Content>
