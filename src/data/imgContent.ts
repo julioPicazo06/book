@@ -16,33 +16,32 @@ export interface ContentSkills {
     imgSkills : ImgSkills[]
 }
 
-export const imgSkills :ImgSkills[]  = [
-    {
-        src: angular,
-        alt: 'angular'
-    },
-    {
-        src: reactImg,
-        alt: 'reactImg'
-    },
-    {
-        src: jquery,
-        alt: 'jquery'
-    },
-    {
-        src: javaScriptImg,
-        alt: 'javaScriptImg'
-    },
-    {
-        src: nodejs,
-        alt: 'nodejs'
-    },
-];
-
 export const contentSkills :ContentSkills = {
+    
     title: 'Skills',
     description: '',
-    imgSkills
+    imgSkills : [
+        {
+            src: angular,
+            alt: 'angular'
+        },
+        {
+            src: reactImg,
+            alt: 'reactImg'
+        },
+        {
+            src: jquery,
+            alt: 'jquery'
+        },
+        {
+            src: javaScriptImg,
+            alt: 'javaScriptImg'
+        },
+        {
+            src: nodejs,
+            alt: 'nodejs'
+        },
+    ]
 }
 
 export interface SkillData {
@@ -50,8 +49,4 @@ export interface SkillData {
     imgSkills: ImgSkills[];
 }
 
-export const skillData : SkillData = {
-    contentSkills: contentSkills,
-    imgSkills: imgSkills,
-};
 

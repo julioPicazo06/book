@@ -31,7 +31,11 @@ export const fetchAndDispatch = async <T>({
             dispatch(action(data));
         } catch (error) {
             console.error('Fetch failed, using static content:', error);
+            console.log('staticContent', staticContent);
             dispatch(action(staticContent));
         }
+    } else{
+      dispatch(action(staticContent));
+
     }
 };

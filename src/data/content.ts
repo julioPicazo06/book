@@ -7,9 +7,14 @@ import { imgContentIllustration, imgContentWeb} from './types'
 
 import { c1, c2, c3, fizh1, fizh2, fizh3  } from  'utils/img'
 import cangrejo from 'img/fizhart/krab.png';
+import { illustrationContent } from 'store/reducers/illustrationSlice'
 
 
-export const contentIllustration:imgContentIllustration[] = [
+
+export const contentIllustration:illustrationContent = {
+    title :  "Proyectos Ilustración",
+    description : 'Aquí está un poco de mi trabajo en diseño de personajes , algo que me ha gustado mucho a lo largo de los años, digitalizar bocetos y transformarlos en vectores.',
+    img : [
     {
         id : 1 ,
         nombre : 'Personajes',
@@ -59,6 +64,7 @@ export const contentIllustration:imgContentIllustration[] = [
         ]
     }
   ]
+}
 
 export const contentWeb:imgContentWeb[] = [
     {
@@ -125,4 +131,7 @@ export const contentWeb:imgContentWeb[] = [
         illustracionColor: '#329D9C',
         contactoColor: '#56C596'
   }
+
+
+  
   

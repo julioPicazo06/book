@@ -5,6 +5,7 @@ import {  PropsContent } from './types'
 import { Content } from 'components/StylesComponents/ContentStyles'
 import { contentWeb } from 'data/content'
 import { imgContentWeb } from 'data/types'
+import CloseButton from 'components/closeButton'
 
 
 const ContenidoProyectos: FC<PropsContent> = ({
@@ -55,22 +56,11 @@ const ContenidoProyectos: FC<PropsContent> = ({
                       }
   return (
     <Content color={'#7BE495'}>
-      <div id='' className='  mouse row flex column end'>
-        <div className=''>
-          <div className='col-xs-1-12 cursor ' data-text='frontEnd'>
-            <div
-              className='cursor flex column end mt-3 pr-6 roboto f-30 bold '
-              style={{
-                paddingRight: '20px'
-              }}
-              data-text='frontEnd'
-              onClick={e => handleClose(e)}
-            >
-              X
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <CloseButton dataText='frontEnd' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
+
+
+      
 
       <div className='container'>
         <div className='row'>

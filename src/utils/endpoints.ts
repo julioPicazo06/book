@@ -5,5 +5,8 @@ export const endpoints = {
     grades : `${enpoint}book/grades`,
     cover : `${enpoint}book/cover`,
     menu : `${enpoint}book/menu`,
+    about : `${enpoint}book/about`,
+    skills : `${enpoint}book/skills`,
+    illustration : `${enpoint}book/illustration`,
 }
 
