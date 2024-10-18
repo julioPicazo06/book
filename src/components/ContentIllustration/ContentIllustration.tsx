@@ -1,14 +1,51 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
 import { imgenes, PropsIllustracion } from './types'
 import { contentIllustration } from 'data/content'
 import { Content } from 'components/StylesComponents/ContentStyles';
+import CloseButton from 'components/closeButton';
+import { fetchAndDispatch } from 'utils/fetchAndDispatch';
+import { endpoints } from 'utils/endpoints';
+import { setIllustration } from 'store/reducers/illustrationSlice';
+import { useSelector, useDispatch} from 'react-redux';
+
 
 
 
 const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustracion):JSX.Element => {
-    
-  const [modalContentido, setmodalContentido] = useState({
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+
+    fetchAndDispatch({
+      url : endpoints['illustration'] ,
+      staticContent:contentIllustration ,
+      action: setIllustration,
+      dispatch,
+      flag: false,
+    })
+
+
+
+  }, [])
+
+  const contentIllustrationS = useSelector((state:any)=> state.illustration)
+
+
+
+interface Works {
+  descripcion : string,
+  img :[] ,
+  imgProyecto : {
+    img : string
+  },
+  nombre : string,
+  cliente : string,
+  tecnica : string
+}
+
+
+  const [modalContentido, setmodalContentido] = useState<Works>({
     descripcion : '',
     img :[] ,
     imgProyecto : {
@@ -52,35 +89,23 @@ const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustra
 
     return (
         <Content color={"#56C596"}>
-                      <div id='' className='  mouse row flex column end'>
-        <div className=''>
-          <div className='col-xs-1-12 cursor ' data-text='frontEnd'>
-            <div
-              className='cursor flex column end mt-3 pr-6 roboto f-30 bold '
-              style={{
-                paddingRight: '20px'
-              }}
-              data-text='frontEnd'
-              onClick={e => handleClose(e)}
-            >
-              X
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+      <CloseButton dataText='frontEnd' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
+      
       <div className='container'>
         <div className='row'>
-          <h1 className='mouse letraCapital'> Proyectos Ilustración</h1>
+          <h1 className='mouse letraCapital'> {contentIllustrationS.title}</h1>
         </div>
         <div className='row mouse'>
           <p className="pt-3 pb-3">
-          Aquí está un poco de mi trabajo en diseño de personajes , algo que me ha gustado mucho a lo largo de los años, digitalizar bocetos y transformarlos en vectores.
+            {contentIllustrationS.description }
           </p>
         </div>
         <div className=' items flex rowS flexStart'>
         {/* <Proyecto img={OryMago} titulo={'mago'}  /> */}
         {
-          contentIllustration.map((item:imgenes)=> (
+          contentIllustrationS.img.map((item:imgenes)=> (
             <div
             className='item-img pr-5 cursor flex column'
             style={{

@@ -5,10 +5,10 @@ import TimeLineGeneral from 'components/TimeLine/TimeLineGeneral'
 import { TimeLineContentModel } from 'data/TimeLineContent'
 import React from 'react'
 
-function TimeLineEducation({EducationTimeLineContent , title}:{
+const  TimeLine = ({ EducationTimeLineContent , title }:{
     EducationTimeLineContent: TimeLineContentModel[],
     title: string
-}) {
+})  => {
   return (
     <div className='container mouse'>
           <div className='row'>
@@ -19,12 +19,12 @@ function TimeLineEducation({EducationTimeLineContent , title}:{
           <div className='row'>
             <Timeline className='mouse' position='alternate'>
               {EducationTimeLineContent.map(
-                ({ nombre, fecha, puesto }: TimeLineContentModel) => (
+                ({ name, date, position }: TimeLineContentModel) => (
                   <TimeLineGeneral
-                    key={nombre}
-                    nombre={nombre}
-                    fecha={fecha}
-                    puesto={puesto}
+                    key={name}
+                    name={name}
+                    date={date}
+                    position={position}
                   />
                 )
               )}
@@ -34,4 +34,4 @@ function TimeLineEducation({EducationTimeLineContent , title}:{
   )
 }
 
-export default TimeLineEducation
+export default TimeLine

@@ -6,14 +6,14 @@ import { FC, useRef, useState, useEffect } from "react"
 import { Link } from "react-scroll"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
-import yoImg from 'img/yo.png';
-import frontEndImg from 'img/frontEnd.png';
-import illustracionImg from 'img/illustracion.png';
-import contactoImg from 'img/contacto.png';
-import { colors } from "data/content"
 import { ContenidoYo } from "components/ContentMe"
+import { useSelector } from 'react-redux';
+import { RootState } from "store/store"
 
 export const MenuGeneral:FC = ():JSX.Element => {
+
+    const menuData = useSelector((state: RootState) => state.menu)
+
 
     const divMenu = useRef<HTMLDivElement>(null)
     const [widowSize, setWidowSize] = useState(window.innerHeight)
@@ -147,7 +147,7 @@ export const MenuGeneral:FC = ():JSX.Element => {
 
             <MenuG  display={'flex'} row={true} wrap={true} color={"#56C596"}>
                 <Modulo
-                    background={colors['aboutColor']}
+                    background={menuData['me'].color}
                     width={visible.yo.width}
                     height={visible.yo.height}
                     display={visible.yo.visible}>
@@ -155,8 +155,8 @@ export const MenuGeneral:FC = ():JSX.Element => {
                         visible.yo.width === 50 ? (
                             <MenuSection className="flex column justificar center height50">
                                 <div className="item-hover"  >
-                                    <img className="menu-img" data-text="yo" onClick={(e) => handleClick(e)} src={yoImg} alt="yo" />
-                                    <h1 data-text="yo" onClick={(e) => handleClick(e)}>Yo</h1>
+                                    <img className="menu-img" data-text="yo" onClick={(e) => handleClick(e)} src={menuData['me'].img} alt="yo" />
+                                    <h1 data-text="yo" onClick={(e) => handleClick(e)}>{ menuData['me'].title }</h1>
                                 </div>
                             </MenuSection>
                         ) : (<ContenidoYo handleClose={handleClose} />)
@@ -165,7 +165,7 @@ export const MenuGeneral:FC = ():JSX.Element => {
 
                 </Modulo>
                 <Modulo
-                    background={colors['frontEndColor']}
+                    background={menuData['frontend'].color}
                     width={visible.frontEnd.width}
                     height={visible.frontEnd.height}
                     display={visible.frontEnd.visible}>
@@ -173,8 +173,8 @@ export const MenuGeneral:FC = ():JSX.Element => {
                         visible.frontEnd.width === 50 ? (
                             <MenuSection className="flex column justificar center height50">
                                 <div className="item-hover" >
-                                    <img className="menu-img" data-text="frontEnd" onClick={e => handleClick(e)} src={frontEndImg} alt="frontEnd" />
-                                    <h1 data-text="frontEnd" onClick={e => handleClick(e)}>FrontEnd</h1>
+                                    <img className="menu-img" data-text="frontEnd" onClick={e => handleClick(e)} src={menuData['frontend'].img} alt="frontEnd" />
+                                    <h1 data-text="frontEnd" onClick={e => handleClick(e)}>{ menuData['frontend'].title }</h1>
                                 </div>
 
                             </MenuSection>
@@ -183,14 +183,14 @@ export const MenuGeneral:FC = ():JSX.Element => {
 
                 </Modulo>
                 <Modulo
-                    background={colors['illustracionColor']}
+                    background={menuData['ilustration'].color}
                     width={visible.illustracion.width}
                     height={visible.illustracion.height}
                     display={visible.illustracion.visible}>
                     {visible.illustracion.width === 50 ? (<MenuSection className="flex column justificar center height50">
                         <div className="item-hover" >
-                            <img className="menu-img" data-text="illustracion" onClick={(e) => handleClick(e)} src={illustracionImg} alt="illustracion" />
-                            <h1 data-text="illustracion" onClick={(e) => handleClick(e)}>Ilustracion</h1>
+                            <img className="menu-img" data-text="illustracion" onClick={(e) => handleClick(e)} src={menuData['ilustration'].img} alt="illustracion" />
+                            <h1 data-text="illustracion" onClick={(e) => handleClick(e)}>{menuData['ilustration'].title}</h1>
                         </div>
 
 
@@ -198,7 +198,7 @@ export const MenuGeneral:FC = ():JSX.Element => {
 
                 </Modulo>
                 <Modulo
-                    background={colors['contactoColor']}
+                    background={menuData['contact'].color}
                     width={visible.contacto.width}
                     height={visible.contacto.height}
                     display={visible.contacto.visible}>
@@ -206,8 +206,8 @@ export const MenuGeneral:FC = ():JSX.Element => {
                         visible.contacto.width === 50 ? (
                             <MenuSection className="flex column justificar center height50">
                                 <div className="item-hover" >
-                                    <img className="menu-img" data-text="contacto" onClick={(e) => handleClick(e)} src={contactoImg} alt="contacto" />
-                                    <h1 data-text="contacto" onClick={(e) => handleClick(e)}>Contacto</h1>
+                                    <img className="menu-img" data-text="contacto" onClick={(e) => handleClick(e)} src={menuData['contact'].img} alt="contacto" />
+                                    <h1 data-text="contacto" onClick={(e) => handleClick(e)}>{menuData['contact'].title}</h1>
                                 </div>
 
                             </MenuSection>

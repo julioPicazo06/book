@@ -1,19 +1,19 @@
 import { FC } from 'react'
-import cat from 'img/cat.png'
 import { Link } from "react-scroll";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { coverData } from 'data/coverData';
-
+import { useSelector } from 'react-redux';
+import { RootState } from 'store/store';
 
 export const Cover: FC<any> = () => {
 
+    const {title , statement , img} = useSelector((state:RootState) => state.cover);
     
     return (
         <section className="contenedor-portada portada" >
 
 
             <div className="row">
-                <img src={cat} className="img-fluid" style={{
+                <img src={img} className="img-fluid" style={{
                     maxWidth: "400px"
                 }}  alt='catImage'/>
             </div>
@@ -24,7 +24,7 @@ export const Cover: FC<any> = () => {
                 <div>
                     <div className=" rotar ">
                         <span className="letraCursiva tituloC ">
-                            { coverData.title }
+                            { title }
                         </span>
 
                     </div>
@@ -37,7 +37,7 @@ export const Cover: FC<any> = () => {
 
 
                     <p className="textoCapital statement">
-                        { coverData.statement }
+                        {statement}
 
                     </p>
 
