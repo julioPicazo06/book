@@ -61,7 +61,7 @@ export const MenuGeneral:FC = ():JSX.Element => {
 
     const handleClick = (e: any) => {
         let dataE = e.target.dataset.text as string
-        let noEsta = Object.keys(visible).filter((item) => item != dataE)
+        let noEsta = Object.keys(visible).filter((item) => item !== dataE)
         setButtonVisible(!buttonVisible)
         setVisible({
             ...visible,

@@ -6,13 +6,20 @@ import contactoImg from 'img/3.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { setForm } from 'store/reducers/formSlice';
 import { RootState } from 'store/store';
-
+import { useParams } from 'react-router-dom';
+import { getAlertMessage, getFormData } from 'data/formData';
+import emailjs from 'emailjs-com';
 
 const Form = () => {
   const dispatch = useDispatch();
   const { name, lastName, email, subject, message } = useSelector((state: RootState) => state.form);
+  const [ success , setsuccess ] = useState<string>("");
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [loader , setLoader] = useState<boolean>(false);
 
+  const { param:lang } = useParams<{param: string}>();
 
+console.log(success);
     const formik = useFormik({
         initialValues: {
           name: '',
@@ -22,27 +29,60 @@ const Form = () => {
           message: ''
         },
         validationSchema: Yup.object({
-          name: Yup.string().required('El nombre  es requerido'),
-          lastName: Yup.string().required('El apellido es requerido'),
-          email: Yup.string().email('Email inválido').required('Email es requerido'),
-          subject: Yup.string().required('Asunto es requerido'),
-          message: Yup.string().required('message es requerido')
+          name: Yup.string().required(getAlertMessage(lang).name),
+          lastName: Yup.string().required(getAlertMessage(lang).lastName),
+          email: Yup.string().email( getAlertMessage(lang).emailInvalid).required(getAlertMessage(lang).email),
+          subject: Yup.string().required(getAlertMessage(lang).subject),
+          message: Yup.string().required(getAlertMessage(lang).message)
         }),
         onSubmit: values => {
+          setLoader(true);
             dispatch(setForm({...values}));
+            sendEmail({...values});
+
+            formik.resetForm();
         }
       });
+
+  const sendEmail = ({...values}) => {
+    const templateParams = {
+      lastName: values.lastName,
+      email: values.email,
+      name: values.name,
+      subject: values.subject,
+      message: values.message
+    };
+
+    emailjs.send('service_wb6kmcb', 'template_8feakmf', templateParams, 'ST0h3lqQUy-da7Y-j')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setsuccess(response.text);
+        setShowAlert(true);
+        setTimeout(() => {
+          setShowAlert(false);
+        }, 5000);
+        setLoader(false);
+      }, (error) => {
+        console.log('FAILED...', error);
+      });
+  };
+
 
   return (
     <div className="row">
           <div className='col-xs-12 col-sm-12 col-md-5 col-lg-5 mouse'>
+           {
+            showAlert &&  success === 'OK' ? <div className="alert alert-success" role="alert">
+              {getFormData(lang).success} 
+            </div> : null
+           }
             <form onSubmit={formik.handleSubmit}>
               <fieldset>
-                <legend>Mantengamos contacto</legend>
+                <legend> {getFormData(lang).title}</legend>
                 <div className='row'>
                 <div className='col-mb-3 col-lg-6'>
                   <label htmlFor='name' className='form-label'>
-                    Nombre
+                   {getFormData(lang).name}
                   </label>
                   <input
                     type='text'
@@ -56,7 +96,7 @@ const Form = () => {
                 </div>
                 <div className='col-mb-3 col-lg-6'>
                   <label htmlFor='name' className='form-label'>
-                    Apellido
+                    {getFormData(lang).lastName}
                   </label>
                   <input
                     type='text'
@@ -74,7 +114,7 @@ const Form = () => {
                 <div className="row">
                 <div className='col-mb-3 col-lg-6'>
                   <label htmlFor='email' className='form-label'>
-                    Email
+                    {getFormData(lang).email}
                   </label>
                   <input
                     type='email'
@@ -88,7 +128,7 @@ const Form = () => {
                 </div>
                 <div className='col-mb-3 col-lg-6'>
                   <label htmlFor='subject' className='form-label'>
-                    Asunto
+                    {getFormData(lang).subject}
                   </label>
                   <input
                     type='text'
@@ -103,7 +143,7 @@ const Form = () => {
                 </div>
                 <div className='mb-3 lg-6'>
                   <label htmlFor='message' className='form-label'>
-                    message
+                    {getFormData(lang).message}
                   </label>
                   <textarea
                     id='message'
@@ -115,8 +155,11 @@ const Form = () => {
                     <div className='text-danger'>{formik.errors.message}</div>
                   ) : null}
                 </div>
-                <button type='submit' className='btn btn-primary btn-lg'>
-                  Enviar
+                <button type='submit' className='btn btn-dark btn-lg ' disabled={ !(formik.isValid  && formik.dirty)}>
+                  {getFormData(lang).button} 
+                  {
+                  loader &&( <div className="spinner-border text-light " role="status" /> )
+                  }
                 </button>
               </fieldset>
             </form>
@@ -124,9 +167,9 @@ const Form = () => {
           <div className='col-xs-6 col-sm-6 col-md-6 col-lg-6 flex justificar centrar column '>
             <img className="img-fluid" src={contactoImg} alt='contactoImg' />
           </div>
-          <code>
+          {/* <code>
             <pre>{JSON.stringify({ name, lastName, email, subject, message } , null, 2)}</pre>
-          </code>
+          </code> */}
         </div>
   )
 }

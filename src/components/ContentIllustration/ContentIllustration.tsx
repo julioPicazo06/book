@@ -1,25 +1,28 @@
 import React, { FC, useEffect, useState } from 'react'
 
 import { imgenes, PropsIllustracion } from './types'
-import { contentIllustration } from 'data/content'
+import { contentIllustration, getJobsTimeLineContent } from 'data/content'
 import { Content } from 'components/StylesComponents/ContentStyles';
 import CloseButton from 'components/closeButton';
 import { fetchAndDispatch } from 'utils/fetchAndDispatch';
 import { endpoints } from 'utils/endpoints';
 import { setIllustration } from 'store/reducers/illustrationSlice';
 import { useSelector, useDispatch} from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { RootState } from 'store/store';
 
 
 
 
 const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustracion):JSX.Element => {
   const dispatch = useDispatch();
-  
+  const { param:lang } = useParams<{param: string}>();
+
   useEffect(() => {
 
     fetchAndDispatch({
       url : endpoints['illustration'] ,
-      staticContent:contentIllustration ,
+      staticContent: getJobsTimeLineContent(lang) as any,
       action: setIllustration,
       dispatch,
       flag: false,
@@ -29,7 +32,7 @@ const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustra
 
   }, [])
 
-  const contentIllustrationS = useSelector((state:any)=> state.illustration)
+  const contentIllustrationS = useSelector((state: RootState)=> state.illustration)
 
 
 

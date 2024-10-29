@@ -2,6 +2,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
+
 interface JobHistory {
     name: string;
     date: string;
@@ -9,46 +10,68 @@ interface JobHistory {
 
 }
 
+
 interface EducationHistory {
     name: string;
     date: string;
     position: string;
 }
 
+interface EducationObj{
+    title : string;
+    content: EducationHistory[];
+}
+
+interface JobObj{
+    title : string;
+    content: JobHistory[];
+}
+
+
 interface HistoryState {
-    jobHistory: JobHistory[];
-    educationHistory: EducationHistory[];
+    jobHistory: JobObj;
+    educationHistory:  EducationObj;
   }
 
 const initialState:HistoryState = {
-    jobHistory: [
-        {
-            name: '',
-            date: '',
-            position: ''
-        },
-    ] as JobHistory[],
-    educationHistory: [
-        {
-            name: '',
-            date: '',
-            position: ''
-        },
-    ] as EducationHistory[]
+    jobHistory: {
+        title : '',
+        content : [
+            {
+                name: '',
+                date: '',
+                position: ''
+            },
+        ] as JobHistory[]
+    },
+    educationHistory: {
+        title : '',
+        content : 
+        [
+            {
+                name: '',
+                date: '',
+                position: ''
+            },
+        ] as EducationHistory[]
+    }
 }
+
+
 
 const historySlice = createSlice({
     name: 'history',
     initialState,
     reducers: {
-        setJobHistory: (state, action: PayloadAction<JobHistory[]>) => {
-            state.jobHistory = action.payload
+        setJobHistory: (state: HistoryState, action: PayloadAction<JobObj>) => {
+            state.jobHistory = action.payload;
         },
-        setEducationHistory: (state, action: PayloadAction<EducationHistory[]>) => {
-            state.educationHistory = action.payload
+        setEducationHistory: (state: HistoryState, action: PayloadAction<EducationObj>) => {
+            state.educationHistory = action.payload;
         }
     }
-})
+});
 
-export const { setJobHistory , setEducationHistory } = historySlice.actions;
-export default historySlice.reducer
+
+export const { setJobHistory, setEducationHistory } = historySlice.actions;
+export default historySlice.reducer;

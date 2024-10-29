@@ -7,6 +7,7 @@ interface FetchAndDispatchParams<T> {
   action: (content: T) => any;
   dispatch: Dispatch<any>;
   flag: boolean;
+  lenguage?: string;
 }
 
 interface Response<T> {
@@ -19,7 +20,8 @@ export const fetchAndDispatch = async <T>({
   staticContent,
   action,
   dispatch,
-  flag
+  flag,
+  lenguage
 }: FetchAndDispatchParams<T>) => {
     if(!flag){
         try {
