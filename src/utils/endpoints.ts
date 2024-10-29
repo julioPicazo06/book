@@ -8,5 +8,6 @@ export const endpoints = {
     about : `${enpoint}book/about`,
     skills : `${enpoint}book/skills`,
     illustration : `${enpoint}book/illustration`,
+    contentWeb : `${enpoint}book/contentWeb`,
 }
 

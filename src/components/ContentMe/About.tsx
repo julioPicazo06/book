@@ -9,7 +9,9 @@ interface AboutProps {
   aboutData: AboutData;
 }
 
+
 const About = ({ aboutData }: AboutProps) => {
+
   return (
     <>
           <div className='row'>

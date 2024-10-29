@@ -1,8 +1,8 @@
 
-import { FC, useEffect } from 'react'
+import {  useEffect } from 'react'
 import {
-  JobsTimeLineContent,
-  TimeLineContent
+  getJobsTimeLineContent,
+  getTimeLineContent,
 } from 'data/TimeLineContent'
 import { Content } from 'components/StylesComponents/ContentStyles';
 import About from './About';
@@ -14,10 +14,11 @@ import { RootState } from 'store/store';
 import { fetchAndDispatch } from 'utils/fetchAndDispatch';
 import { endpoints } from 'utils/endpoints';
 import { contentSkills } from 'data/imgContent';
-import { aboutData } from 'data/aboutData';
+import { getAboutData } from 'data/aboutData';
 import { setAbout } from 'store/reducers/aboutSlice';
 import CloseButton from 'components/closeButton';
 import { setSkills } from 'store/reducers/skillsSlice';
+import { useParams } from 'react-router-dom';
 
 
 interface ContenidoYoModel {
@@ -27,12 +28,14 @@ interface ContenidoYoModel {
 export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   handleClose
 }: ContenidoYoModel): JSX.Element => {
+  const { param:lang } = useParams<{param: string}>();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     fetchAndDispatch({
       url : endpoints['jobs'] ,
-      staticContent: JobsTimeLineContent,
+      staticContent: getJobsTimeLineContent(lang) as any,
       action: setEducationHistory,
       dispatch,
       flag: false,
@@ -40,7 +43,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
 
     fetchAndDispatch({
       url : endpoints['grades'] ,
-      staticContent: TimeLineContent,
+      staticContent: getTimeLineContent(lang) as any,
       action: setJobHistory,
       dispatch,
       flag: false,
@@ -48,7 +51,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
 
     fetchAndDispatch({
       url : endpoints['about'] ,
-      staticContent: aboutData,
+      staticContent: getAboutData(lang),
       action: setAbout,
       dispatch,
       flag: false,
@@ -79,8 +82,8 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
         <section className='container mouse'>
           <About aboutData={aboutDataR} />
           <Skills skillData={skillsR} />
-          <TimeLine EducationTimeLineContent={educationHistory } title="Experiencia Laboral" />
-          <TimeLine EducationTimeLineContent={jobHistory} title="Educacion" />
+          <TimeLine EducationTimeLineContent={educationHistory.content } title={educationHistory.title} />
+          <TimeLine EducationTimeLineContent={jobHistory.content} title={jobHistory.title} />
         </section>
 
       </Content>

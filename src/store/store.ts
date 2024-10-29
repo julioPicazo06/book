@@ -7,6 +7,7 @@ import menuReducer from "./reducers/menuSlice";
 import aboutReducer from "./reducers/aboutSlice";
 import skillsReducer from "./reducers/skillsSlice";
 import illustrationSlice from "./reducers/illustrationSlice";
+import contentWebSlice from "./reducers/contentWebSlice";
 
 const stores = configureStore({
     reducer : {
@@ -16,7 +17,8 @@ const stores = configureStore({
         menu : menuReducer,
         about : aboutReducer,
         skills : skillsReducer,
-        illustration : illustrationSlice
+        illustration : illustrationSlice,
+        contentWeb : contentWebSlice
     }
 });
 
