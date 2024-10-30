@@ -1,15 +1,37 @@
-import { FC, useState } from 'react'
-
-
+import { FC, useEffect, useState } from 'react'
 import {  PropsContent } from './types'
 import { Content } from 'components/StylesComponents/ContentStyles'
-import { contentWeb } from 'data/content'
+import { galleryStaticText, getWebContent} from 'data/content'
 import { imgContentWeb } from 'data/types'
+import CloseButton from 'components/closeButton'
+import { setContentWeb } from 'store/reducers/contentWebSlice'
+import { endpoints } from 'utils/endpoints'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchAndDispatch } from 'utils/fetchAndDispatch'
+import { RootState } from 'store/store'
+import { useParams } from 'react-router-dom'
 
 
 const ContenidoProyectos: FC<PropsContent> = ({
   handleClose
 }: PropsContent): JSX.Element => {
+
+  const dispatch = useDispatch()
+  const { param:lang } = useParams<{param: string}>()
+
+  useEffect(() => {
+    
+  
+    fetchAndDispatch({
+      url: endpoints['contentWeb'],
+      staticContent: getWebContent(lang) as any,
+      action: setContentWeb,
+      dispatch,
+      flag: false
+    })
+  }, [])
+  
+  const contentWeb = useSelector((state:RootState)=> state.contentWeb)
 
   const [modalContentido, setmodalContentido] = useState({
     descripcion : '',
@@ -55,36 +77,24 @@ const ContenidoProyectos: FC<PropsContent> = ({
                       }
   return (
     <Content color={'#7BE495'}>
-      <div id='' className='  mouse row flex column end'>
-        <div className=''>
-          <div className='col-xs-1-12 cursor ' data-text='frontEnd'>
-            <div
-              className='cursor flex column end mt-3 pr-6 roboto f-30 bold '
-              style={{
-                paddingRight: '20px'
-              }}
-              data-text='frontEnd'
-              onClick={e => handleClose(e)}
-            >
-              X
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <CloseButton dataText='frontEnd' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
+
+
+      
 
       <div className='container'>
         <div className='row'>
-          <h1 className='mouse'> Proyectos Front-End</h1>
+          <h1 className='mouse'> { contentWeb.title }</h1>
         </div>
         <div className='row mouse'>
         <p className="pt-3 pb-3">
-        Un poco de código con React como Librería de desarrollo combinando con Sass para lograr un código cada vez más óptimo.
-
+            { contentWeb.description }
           </p>
         </div>
         <div className=' items flex rowS flexStart'>
         {
-          contentWeb.map((item:imgContentWeb)=> (
+          contentWeb.img.map((item:imgContentWeb)=> (
             <div
             className='item-img pr-5 cursor flex column'
             style={{
@@ -134,7 +144,7 @@ const ContenidoProyectos: FC<PropsContent> = ({
                        <a className="btn btn-danger ml-5 pl-4" 
                           href={modalContentido.liga} 
                           rel='noreferrer'
-                          target="_blank">Ir al Proyecto</a>
+                          target="_blank">{galleryStaticText.title}</a>
                      ):null 
                    }
                 <button
@@ -164,10 +174,10 @@ const ContenidoProyectos: FC<PropsContent> = ({
                   }
                 </div>
                 <p className='mouse f-18'>
-                  Cliente : {modalContentido.cliente} <br />
-                  Técnica : {modalContentido.tecnica}
+                  {`${galleryStaticText.Client} : ${modalContentido.cliente}`} <br />
+                  {`${galleryStaticText.Tecnic} : ${modalContentido.tecnica} `}
                   <br />
-                  Descripción : {modalContentido.descripcion} <br/>
+                  {`${galleryStaticText.Description} : ${modalContentido.descripcion}`} <br/>
                   
                   </p>
               </div>
