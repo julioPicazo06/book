@@ -6,6 +6,8 @@ export const AppRoutes : React.FC = () => {
         <Router>
             <Routes>
                 <Route path="/:param" element={<Menu/>}/>
+                <Route path="/" element={<Menu/>}/>
+
                 <Route path="/home/:param" element={<Menu/>}/>
                 
             </Routes>
