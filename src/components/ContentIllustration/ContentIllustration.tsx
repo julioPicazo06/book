@@ -1,15 +1,15 @@
 import React, { FC, useEffect, useState } from 'react'
 
 import { imgenes, PropsIllustracion } from './types'
-import { contentIllustration, getJobsTimeLineContent } from 'data/content'
-import { Content } from 'components/StylesComponents/ContentStyles';
-import CloseButton from 'components/closeButton';
-import { fetchAndDispatch } from 'utils/fetchAndDispatch';
-import { endpoints } from 'utils/endpoints';
-import { setIllustration } from 'store/reducers/illustrationSlice';
+import { contentIllustration, getJobsTimeLineContent } from '@/data/content'
+import { Content } from '@/components/StylesComponents/ContentStyles';
+import CloseButton from '@/components/closeButton';
+import { fetchAndDispatch } from '@/utils/fetchAndDispatch';
+import { endpoints } from '@/utils/endpoints';
+import { setIllustration } from '@/store/reducers/illustrationSlice';
 import { useSelector, useDispatch} from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { RootState } from 'store/store';
+import { RootState } from '@/store/store';
 
 
 

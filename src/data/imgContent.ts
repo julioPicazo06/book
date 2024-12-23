@@ -1,8 +1,8 @@
-import angular from 'img/skills/angular.png';
-import reactImg from 'img/skills/react.png';
-import jquery from 'img/skills/jquery.jpg';
-import javaScriptImg from 'img/skills/javaScript.png';
-import nodejs from 'img/skills/nodejs.png'
+import angular from '@/img/skills/angular.png';
+import reactImg from '@/img/skills/react.png';
+import jquery from '@/img/skills/jquery.jpg';
+import javaScriptImg from '@/img/skills/javaScript.png';
+import nodejs from '@/img/skills/nodejs.png'
 
 
 export interface ImgSkills {

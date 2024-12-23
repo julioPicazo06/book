@@ -1,14 +1,14 @@
-import ContenidoContact from "components/ContentContact/ContentContact"
-import ContenidoIllustracion from "components/ContentIllustration/ContentIllustration"
-import ContenidoProyectos from "components/ContentProyects/ContentProyects"
-import { ArrowButton, MenuG, Modulo, MenuSection } from "components/StylesComponents/ContentStyles"
+import ContenidoContact from "@/components/ContentContact/ContentContact"
+import ContenidoIllustracion from "@/components/ContentIllustration/ContentIllustration"
+import ContenidoProyectos from "@/components/ContentProyects/ContentProyects"
+import { ArrowButton, MenuG, Modulo, MenuSection } from "@/components/StylesComponents/ContentStyles"
 import { FC, useRef, useState, useEffect } from "react"
 import { Link } from "react-scroll"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
-import { ContenidoYo } from "components/ContentMe"
+import { ContenidoYo } from "@/components/ContentMe"
 import { useSelector } from 'react-redux';
-import { RootState } from "store/store"
+import { RootState } from "@/store/store"
 
 export const MenuGeneral:FC = ():JSX.Element => {
 

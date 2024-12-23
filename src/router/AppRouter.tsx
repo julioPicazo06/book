@@ -1,4 +1,4 @@
-import { Menu } from "components/GeneralMenu"
+import { Menu } from "@/components/GeneralMenu"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 export const AppRoutes : React.FC = () => {
@@ -9,7 +9,7 @@ export const AppRoutes : React.FC = () => {
                 <Route path="/" element={<Menu/>}/>
 
                 <Route path="/home/:param" element={<Menu/>}/>
-                
+                <Route path="*" element={<div>404 Not Found</div>} />
             </Routes>
         </Router>
     )

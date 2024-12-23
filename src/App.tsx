@@ -1,4 +1,5 @@
-import { AppRoutes } from 'router/AppRouter';
+import React from 'react';
+import { AppRoutes } from "@/router/AppRouter"
 
 export const App = () => {
 

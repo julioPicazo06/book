@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { Cover } from 'components/cover/Cover'
-import { MenuGeneral } from 'components/GeneralMenu/GeneralMenu'
-import {  coverColors, coverColorsGreens } from 'data/colorData';
-import { isColorDark } from 'utils/isDarkColor';
-import { coverData, getCoverData } from 'data/coverData';
+import { Cover } from '@/components/cover/Cover'
+import { MenuGeneral } from '@/components/GeneralMenu/GeneralMenu'
+import {  coverColors, coverColorsGreens } from '@/data/colorData';
+import { isColorDark } from '@/utils/isDarkColor';
+import { coverData, getCoverData } from '@/data/coverData';
 import { useDispatch } from 'react-redux';
-import { setCover } from 'store/reducers/coverSlice';
-import { fetchAndDispatch } from 'utils/fetchAndDispatch';
-import { endpoints } from 'utils/endpoints';
-import { setMenu } from 'store/reducers/menuSlice';
-import { getMenuData, menuData } from 'data/menuData';
+import { setCover } from '@/store/reducers/coverSlice';
+import { fetchAndDispatch } from '@/utils/fetchAndDispatch';
+import { endpoints } from '@/utils/endpoints';
+import { setMenu } from '@/store/reducers/menuSlice';
+import { getMenuData, menuData } from '@/data/menuData';
 import { useParams } from 'react-router-dom';
 
 export const Menu = () => {

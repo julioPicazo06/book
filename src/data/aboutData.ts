@@ -1,6 +1,6 @@
-import gato from 'img/skills/gato.png';
-import pdfCV from 'pdf/cvJulioPicazo.pdf';
-import pdfResume from 'pdf/resume_JulioPicazo.pdf';
+import gato from '@/img/skills/gato.png';
+import pdfCV from '@/pdf/cvJulioPicazo.pdf';
+import pdfResume from '@/pdf/resume_JulioPicazo.pdf';
 
 export interface AboutData {
     title: string;

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Content } from 'components/StylesComponents/ContentStyles';
+import { Content } from '@/components/StylesComponents/ContentStyles';
 import Form from './Form';
-import CloseButton from 'components/closeButton';
-import { getFormData } from 'data/formData';
+import CloseButton from '@/components/closeButton';
+import { getFormData } from '@/data/formData';
 import { useParams } from 'react-router-dom';
 
 interface PropsContent {

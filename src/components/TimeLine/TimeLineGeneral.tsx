@@ -1,8 +1,8 @@
 import { TimelineItem, TimelineOppositeContent } from '@mui/lab'
 import React, { FC } from 'react'
-import { TimeLineContentModel } from 'data/TimeLineContent'
+import { TimeLineContentModel } from '@/data/TimeLineContent'
 import { makeStyles } from '@mui/styles';
-import { TimelineSeparator  ,TimelineDot , TimelineContent , TimelineConnector } from 'utils/lab';
+import { TimelineSeparator  ,TimelineDot , TimelineContent , TimelineConnector } from '@/utils/lab';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 

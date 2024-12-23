@@ -1,13 +1,13 @@
-import murcielago from 'img/fizhart/murci.png'
-import pollo from 'img/fizhart/pollo.png'
-import OryMago from 'img/fizhart/OryMago.png'
-import ilustracion from 'img/fizhart/illustracionF.png'
-import trabajando from 'img/fizhart/trabajando.png'
+import murcielago from '@/img/fizhart/murci.png'
+import pollo from '@/img/fizhart/pollo.png'
+import OryMago from '@/img/fizhart/OryMago.png'
+import ilustracion from '@/img/fizhart/illustracionF.png'
+import trabajando from '@/img/fizhart/trabajando.png'
 
-import { c1, c2, c3, fizh1, fizh2, fizh3  } from  'utils/img'
-import cangrejo from 'img/fizhart/krab.png';
-import { illustrationContent } from 'store/reducers/illustrationSlice'
-import { ContentWeb } from 'store/reducers/contentWebSlice'
+import { c1, c2, c3, fizh1, fizh2, fizh3  } from  '@/utils/img'
+import cangrejo from '@/img/fizhart/krab.png';
+import { illustrationContent } from '@/store/reducers/illustrationSlice'
+import { ContentWeb } from '@/store/reducers/contentWebSlice'
 
 
 export interface IllustrationContentMultilenguaje{

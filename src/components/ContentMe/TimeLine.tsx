@@ -1,8 +1,8 @@
 
 
 import { Timeline } from '@mui/lab'
-import TimeLineGeneral from 'components/TimeLine/TimeLineGeneral'
-import { TimeLineContentModel } from 'data/TimeLineContent'
+import TimeLineGeneral from '@/components/TimeLine/TimeLineGeneral'
+import { TimeLineContentModel } from '@/data/TimeLineContent'
 import React from 'react'
 
 const  TimeLine = ({ EducationTimeLineContent , title }:{

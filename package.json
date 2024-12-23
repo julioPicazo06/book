@@ -19,10 +19,10 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/axios": "^0.9.36",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.113",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@types/styled-components": "^5.1.34",
+    "@vitejs/plugin-react": "^4.3.3",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "customize-cra": "^1.0.0",
@@ -44,7 +44,6 @@
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
-    "sass": "^1.79.4",
     "styled-components": "^6.1.13",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
@@ -62,7 +61,10 @@
     "version:minor": "npm version minor && git push && git push --tags",
     "version:major": "npm version major && git push && git push --tags",
     "start:prd": "serve -s docs",
-    "optimize:build": "npm run optimize-images && npm run build:prd"
+    "optimize:build": "npm run optimize-images && npm run build:prd",
+    "dev": "vite",
+    "build:vite": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -83,13 +85,16 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^22.9.0",
     "@types/react-scroll": "^1.8.10",
     "file-loader": "^6.2.0",
     "imagemin": "^9.0.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^10.0.0",
     "replace-in-file": "^8.2.0",
+    "sass": "^1.80.6",
     "serve": "^14.2.3",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "vite": "^5.4.10"
   }
 }

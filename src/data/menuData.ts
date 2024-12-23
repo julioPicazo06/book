@@ -1,7 +1,7 @@
-import yoImg from 'img/yo.png';
-import frontEndImg from 'img/frontEnd.png';
-import illustracionImg from 'img/illustracion.png';
-import contactoImg from 'img/contacto.png';
+import yoImg from '@/img/yo.png';
+import frontEndImg from '@/img/frontEnd.png';
+import illustracionImg from '@/img/illustracion.png';
+import contactoImg from '@/img/contacto.png';
 
 export interface MenuItem {
     title: string;

@@ -1,4 +1,4 @@
-import cat from 'img/cat.png'
+import cat from '@/img/cat.png'
 
 export interface CoverData {
     title: string;

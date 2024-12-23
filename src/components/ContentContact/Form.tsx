@@ -2,12 +2,12 @@
 import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import contactoImg from 'img/3.png';
+import contactoImg from '@/img/3.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { setForm } from 'store/reducers/formSlice';
-import { RootState } from 'store/store';
+import { setForm } from '@/store/reducers/formSlice';
+import { RootState } from '@/store/store';
 import { useParams } from 'react-router-dom';
-import { getAlertMessage, getFormData } from 'data/formData';
+import { getAlertMessage, getFormData } from '@/data/formData';
 import emailjs from 'emailjs-com';
 
 const Form = () => {

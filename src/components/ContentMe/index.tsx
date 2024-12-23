@@ -3,21 +3,21 @@ import {  useEffect } from 'react'
 import {
   getJobsTimeLineContent,
   getTimeLineContent,
-} from 'data/TimeLineContent'
-import { Content } from 'components/StylesComponents/ContentStyles';
-import About from './About';
-import Skills from './Skills';
+} from '@/data/TimeLineContent'
+import { Content } from '@/components/StylesComponents/ContentStyles';
+import About from '@/components/ContentMe/About';
+import Skills from '@/components/ContentMe/Skills';
 import { useSelector, useDispatch} from 'react-redux';
-import TimeLine from './TimeLine';
-import { setEducationHistory, setJobHistory } from 'store/reducers/historySlice';
-import { RootState } from 'store/store';
-import { fetchAndDispatch } from 'utils/fetchAndDispatch';
-import { endpoints } from 'utils/endpoints';
-import { contentSkills } from 'data/imgContent';
-import { getAboutData } from 'data/aboutData';
-import { setAbout } from 'store/reducers/aboutSlice';
-import CloseButton from 'components/closeButton';
-import { setSkills } from 'store/reducers/skillsSlice';
+import TimeLine from '@/components/ContentMe/TimeLine';
+import { setEducationHistory, setJobHistory } from '@/store/reducers/historySlice';
+import { RootState } from '@/store/store';
+import { fetchAndDispatch } from '@/utils/fetchAndDispatch';
+import { endpoints } from '@/utils/endpoints';
+import { contentSkills } from '@/data/imgContent';
+import { getAboutData } from '@/data/aboutData';
+import { setAbout } from '@/store/reducers/aboutSlice';
+import CloseButton from '@/components/closeButton';
+import { setSkills } from '@/store/reducers/skillsSlice';
 import { useParams } from 'react-router-dom';
 
 
