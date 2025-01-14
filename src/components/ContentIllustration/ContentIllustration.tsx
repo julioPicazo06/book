@@ -10,13 +10,16 @@ import { setIllustration } from 'store/reducers/illustrationSlice';
 import { useSelector, useDispatch} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { RootState } from 'store/store';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 
 
 
 const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustracion):JSX.Element => {
   const dispatch = useDispatch();
-  const { param:lang } = useParams<{param: string}>();
+  // const { param:lang } = useParams<{param: string}>();
+  const [lang] = useLocalStorage<string>('lang')
+
 
   useEffect(() => {
 

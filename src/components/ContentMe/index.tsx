@@ -19,6 +19,7 @@ import { setAbout } from 'store/reducers/aboutSlice';
 import CloseButton from 'components/closeButton';
 import { setSkills } from 'store/reducers/skillsSlice';
 import { useParams } from 'react-router-dom';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 
 interface ContenidoYoModel {
@@ -28,7 +29,11 @@ interface ContenidoYoModel {
 export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   handleClose
 }: ContenidoYoModel): JSX.Element => {
-  const { param:lang } = useParams<{param: string}>();
+  // const { param:lang } = useParams<{param: string}>();
+
+    
+  const [lang] = useLocalStorage<string>('lang');
+
 
   const dispatch = useDispatch();
 

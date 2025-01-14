@@ -11,17 +11,23 @@ import { endpoints } from 'utils/endpoints';
 import { setMenu } from 'store/reducers/menuSlice';
 import { getMenuData, menuData } from 'data/menuData';
 import { useParams } from 'react-router-dom';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 export const Menu = () => {
 
     const [randomNumber, setRandomNumber] = useState<number>(0);
     const dispatch = useDispatch();
-    const { param:lang } = useParams<{param: string}>();
+    // const { param:lang } = useParams<{param: string}>();
+    const [lang , setLang] = useLocalStorage<string>('lang');
+    if (lang === undefined) {
+        setLang('en') ;
+    }
+
     
     useEffect(() => {
     
         fetchAndDispatch({
-            url: endpoints['cover'], 
+            url: endpoints['cover'],
             staticContent: getCoverData(lang), // Add the staticContent property with a value of null
             action: setCover,
             dispatch,
@@ -39,7 +45,7 @@ export const Menu = () => {
 
         })
 
-      
+
 
         const generateRandomNumber = () => Math.floor(Math.random() * coverColorsGreens.length ); // Genera un número entre 0 y 3
         setRandomNumber(generateRandomNumber());

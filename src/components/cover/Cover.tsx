@@ -6,8 +6,10 @@ import { RootState } from 'store/store';
 
 export const Cover: FC<any> = () => {
 
-    const {title , statement , img} = useSelector((state:RootState) => state.cover);
+    const { title , statement , img } = useSelector((state:RootState) => state.cover);
     
+    
+
     return (
         <section className="contenedor-portada portada" >
 
@@ -54,7 +56,7 @@ export const Cover: FC<any> = () => {
                         duration={500}>
 
                         <span className="btn btn-dark">
-                           <ExpandMoreIcon/>
+                            <ExpandMoreIcon/>
                         </span>
                     </Link>
                 </div>

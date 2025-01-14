@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchAndDispatch } from 'utils/fetchAndDispatch'
 import { RootState } from 'store/store'
 import { useParams } from 'react-router-dom'
+import useLocalStorage from 'hooks/useLocalStorage'
 
 
 const ContenidoProyectos: FC<PropsContent> = ({
@@ -17,7 +18,8 @@ const ContenidoProyectos: FC<PropsContent> = ({
 }: PropsContent): JSX.Element => {
 
   const dispatch = useDispatch()
-  const { param:lang } = useParams<{param: string}>()
+  // const { param:lang } = useParams<{param: string}>()
+  const [lang] = useLocalStorage<string>('lang')
 
   useEffect(() => {
     

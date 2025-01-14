@@ -25,7 +25,7 @@ export const coverDataMultilenguage: MultiLangCoverData = {
     },
     en: {
         title: 'Julio Eduardo Picazo Rodriguez',
-        statement: "I transform ideas into functional and efficient code... and I also make drawings.",
+        statement: "I transform ideas into functional and efficient code... and I also make cartoons.",
         img: cat
     }
 };

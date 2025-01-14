@@ -128,7 +128,6 @@ export const MenuGeneral:FC = ():JSX.Element => {
     return (
         <>
             <div ref={ divMenu }>
-           
             {
                 buttonVisible && (
                     <ArrowButton botom={`-${menuSize ? menuSize -20 : 0}px`} >
