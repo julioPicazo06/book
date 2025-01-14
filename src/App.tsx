@@ -5,10 +5,6 @@ export const App = () => {
 
 
     return (
-        <div >
-
-                <AppRoutes/>
-       
-        </div>
+        <AppRoutes/>
     )
 }

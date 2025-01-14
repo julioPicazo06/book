@@ -25,7 +25,7 @@ export const contentIllustration:IllustrationContentMultilenguaje = {
             cliente : 'Personajes propios',
             tecnica : 'Imágenes vectoriales',
             imgProyecto : {
-              img : cangrejo
+            img : cangrejo
             },
             descripcion : 'Caricaturas para un proyecto propio en el que se tenía como límite 5 minutos para la creación del boceto',
             img : [
@@ -50,7 +50,7 @@ export const contentIllustration:IllustrationContentMultilenguaje = {
             tecnica : 'Imágenes vectoriales',
             descripcion : 'Ory el conejo es un personaje propio registrado ante indautor en el 2014 ',
             imgProyecto : {
-              img : OryMago
+            img : OryMago
             },
             img : [
                 {
@@ -67,7 +67,7 @@ export const contentIllustration:IllustrationContentMultilenguaje = {
                 }
             ]
         }
-      ]
+    ]
     },
     en : {
         title :  "Illustration Projects",
@@ -79,7 +79,7 @@ export const contentIllustration:IllustrationContentMultilenguaje = {
             cliente : 'Own characters',
             tecnica : 'Vector images',
             imgProyecto : {
-              img : cangrejo
+                img : cangrejo
             },
             descripcion : 'Caricatures for a personal project in which there was a limit of 5 minutes for the creation of the sketch',
             img : [
@@ -104,7 +104,7 @@ export const contentIllustration:IllustrationContentMultilenguaje = {
             tecnica : 'Vector images',
             descripcion : 'Ory the rabbit is a character of my own registered before indautor in 2014',
             imgProyecto : {
-              img : OryMago
+            img : OryMago
             },
             img : [
                 {
@@ -121,7 +121,7 @@ export const contentIllustration:IllustrationContentMultilenguaje = {
                 }
             ]
         }
-      ]
+    ]
     }
 }
 
@@ -153,10 +153,10 @@ export const contentWebR: webContentMultilenguaje = {
                 tecnica : 'html5 JavaScript , php , Css3',
                 liga : 'http://fizharts.com/',
                 imgProyecto : {
-                  img : fizh1
+                    img : fizh1
                 },
                 descripcion : 'Se realizo la página web desde la toma de requerimientos hasta la maquetación y programación de la misma , la creación de imágenes vectoriales y retoque fotográfico.',
-                img : [
+                    img : [
                     {
                         src : fizh1,
                         alt : 'fizh1'
@@ -179,7 +179,7 @@ export const contentWebR: webContentMultilenguaje = {
                 liga : 'https://juliopicazo06.github.io/multimedia/',
                 descripcion : 'Proyecto escolar para la especialidad de Diseño multimedia , donde se consumió la Api de la ciudad de méxico de la ocupación hospitalaria en la capital de México y el área metropolitana. transformando datos en imágenes en objetos 3D',
                 imgProyecto : {
-                  img : c1
+                    img : c1
                 },
                 img : [
                     {
@@ -196,7 +196,7 @@ export const contentWebR: webContentMultilenguaje = {
                     }
                 ]
             }
-          ]
+        ]
     } ,
     en : {
         title :  "Front-End Projects",
@@ -209,7 +209,7 @@ export const contentWebR: webContentMultilenguaje = {
                 tecnica : 'html5 JavaScript , php , Css3',
                 liga : 'http://fizharts.com/',
                 imgProyecto : {
-                  img : fizh1
+                    img : fizh1
                 },
                 descripcion : 'The website was made from the requirements gathering to the layout and programming of it, the creation of vector images and photo retouching.',
                 img : [
@@ -235,7 +235,7 @@ export const contentWebR: webContentMultilenguaje = {
                 liga : 'https://juliopicazo06.github.io/multimedia/',
                 descripcion : 'School project for the specialty of Multimedia Design, where the Mexico City API of hospital occupancy in the capital of Mexico and the metropolitan area was consumed. transforming data into images in 3D objects',
                 imgProyecto : {
-                  img : c1
+                    img : c1
                 },
                 img : [
                     {
@@ -252,7 +252,7 @@ export const contentWebR: webContentMultilenguaje = {
                     }
                 ]
             }
-          ]
+        ]
     }
 }
 
@@ -262,17 +262,17 @@ export const getWebContent = (lang:string = ''):ContentWeb => {
 
 
 
-  export const colors : {
+    export const colors : {
     aboutColor: string,
     frontEndColor: string,
     illustracionColor: string,
     contactoColor: string
-  } = {
+    } = {
         aboutColor: '#002D40',
         frontEndColor: '#FF414D',
         illustracionColor: '#329D9C',
         contactoColor: '#56C596'
-  }
+    }
 
 interface GalleryStaticText {
     title : string,
@@ -289,5 +289,3 @@ export const galleryStaticText:GalleryStaticText = {
 }
 
 
-  
-  

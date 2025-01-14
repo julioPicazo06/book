@@ -19,10 +19,9 @@ const TimeLineGeneral:FC<TimeLineContentModel> = ({name , date, position}:TimeLi
           backgroundColor: theme.palette.secondary.main,
         },
       }));
- 
+
     const classes = useStyles();
     
-     
     return (
         <TimelineItem className="mouse">
         <TimelineOppositeContent>
