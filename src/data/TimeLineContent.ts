@@ -3,6 +3,7 @@ export interface TimeLineContentModel {
     name : string;
     date : string;
     position : string;
+    viewDate?: string;
 }
 
 export interface MultiLangTimeLineContent {

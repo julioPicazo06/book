@@ -9,6 +9,7 @@ interface IFormData {
     message : string;
     button : string;
     success : string;
+    img : string;
 }
 
 
@@ -27,7 +28,8 @@ export const formData :MultiLangFormData = {
         subject : "Asunto",
         message : "Mensaje",
         button : "Enviar",
-        success : "Mensaje enviado con éxito"
+        success : "Mensaje enviado con éxito",
+        img : "img"
     },
     en : {
         pageTitle : "Contact",
@@ -38,7 +40,8 @@ export const formData :MultiLangFormData = {
         subject : "Subject",
         message : "Message",
         button : "Send",
-        success : "Message sent successfully"
+        success : "Message sent successfully",
+        img : "img"
     }
 
 }

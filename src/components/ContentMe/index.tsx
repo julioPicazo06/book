@@ -44,6 +44,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       action: setEducationHistory,
       dispatch,
       flag: false,
+      lenguage: lang
     })
 
     fetchAndDispatch({
@@ -52,6 +53,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       action: setJobHistory,
       dispatch,
       flag: false,
+      lenguage: lang
     });
 
     fetchAndDispatch({
@@ -60,6 +62,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       action: setAbout,
       dispatch,
       flag: false,
+      lenguage: lang
     });
 
     fetchAndDispatch({
@@ -68,6 +71,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       action: setSkills,
       dispatch,
       flag: false,
+      lenguage: lang
     });
 
   }, [])
@@ -76,6 +80,8 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   const { jobHistory , educationHistory } = useSelector((state: RootState) => state.history)
   const aboutDataR = useSelector((state: RootState) => state.about);
   const skillsR = useSelector((state: RootState) => state.skills);
+
+  console.log('skillsR', skillsR);
   return (
     <>
       <Content color={'#56C596'}>

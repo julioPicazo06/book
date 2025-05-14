@@ -28,7 +28,7 @@ export const Menu = () => {
     
         fetchAndDispatch({
             url: endpoints['cover'],
-            staticContent: getCoverData(lang), // Add the staticContent property with a value of null
+            staticContent: getCoverData(lang), // Add the staticContent property with a value of n
             action: setCover,
             dispatch,
             flag: false,

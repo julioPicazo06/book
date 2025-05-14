@@ -11,7 +11,7 @@ interface FetchAndDispatchParams<T> {
 }
 
 interface Response<T> {
-  data: T;
+  content: T;
   status: number;
 }
 
@@ -21,7 +21,7 @@ export const fetchAndDispatch = async <T>({
   action,
   dispatch,
   flag,
-  lenguage
+  lenguage = 'en'
 }: FetchAndDispatchParams<T>) => {
     if(!flag){
         try {
@@ -29,10 +29,11 @@ export const fetchAndDispatch = async <T>({
             if (response.status !== 200) {
             throw new Error('Network response was not ok');
             }
-            const { data } = response.data;
-            dispatch(action(data));
+
+            const data = response.data;
+            const selectedLang = lenguage || 'es';
+            dispatch(action(((data as unknown) as Record<string, T>)[selectedLang]));
         } catch (error) {
-            console.error('Fetch failed, using static content:', error);
             console.log('staticContent', staticContent);
             dispatch(action(staticContent));
         }

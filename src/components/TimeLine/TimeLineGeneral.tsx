@@ -8,8 +8,9 @@ import Paper from '@mui/material/Paper';
 
 import { Theme } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
+import { When } from 'components/When/When';
 
-const TimeLineGeneral:FC<TimeLineContentModel> = ({name , date, position}:TimeLineContentModel) => {
+const TimeLineGeneral:FC<TimeLineContentModel> = ({name , date, position , viewDate}:TimeLineContentModel) => {
     const useStyles = makeStyles((theme:Theme) => ({
         paper: {
           padding: '6px 16px',
@@ -26,9 +27,12 @@ const TimeLineGeneral:FC<TimeLineContentModel> = ({name , date, position}:TimeLi
     return (
         <TimelineItem className="mouse">
         <TimelineOppositeContent>
+          <When predicate={!!viewDate}>
           <Typography variant="body2" color="textSecondary">
             {date}
           </Typography>
+          </When>
+        
         </TimelineOppositeContent>
         <TimelineSeparator style={{
           borderColor:'black'

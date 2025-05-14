@@ -19,12 +19,13 @@ const  TimeLine = ({ EducationTimeLineContent , title }:{
           <div className='row'>
             <Timeline className='mouse' position='alternate'>
               {EducationTimeLineContent.map(
-                ({ name, date, position }: TimeLineContentModel) => (
+                ({ name, date, position , viewDate }: TimeLineContentModel) => (
                   <TimeLineGeneral
                     key={name}
                     name={name}
                     date={date}
                     position={position}
+                    viewDate={viewDate}
                   />
                 )
               )}

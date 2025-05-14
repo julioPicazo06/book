@@ -1,19 +1,29 @@
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import contactoImg from 'img/3.png';
-import { useDispatch, useSelector } from 'react-redux';
-import { setForm } from 'store/reducers/formSlice';
-import { RootState } from 'store/store';
-import { useParams } from 'react-router-dom';
 import { getAlertMessage, getFormData } from 'data/formData';
 import emailjs from 'emailjs-com';
 import useLocalStorage from 'hooks/useLocalStorage';
 
-const Form = () => {
-  const dispatch = useDispatch();
-  const { name, lastName, email, subject, message } = useSelector((state: RootState) => state.form);
+interface formData {
+
+  pageTitle: string;
+  title: string;
+  name: string;
+  lastName: string;
+  email: string;
+  subject: string;
+  message: string;
+  button: string;
+  success: string;
+  img: string;
+}
+
+
+const Form = ({ formContent }: { formContent: formData }) => {
+
+
   const [success, setsuccess] = useState<string>("");
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [loader, setLoader] = useState<boolean>(false);
@@ -38,7 +48,7 @@ const Form = () => {
     }),
     onSubmit: values => {
       setLoader(true);
-      dispatch(setForm({ ...values }));
+
       sendEmail({ ...values });
 
       formik.resetForm();
@@ -69,6 +79,9 @@ const Form = () => {
   };
 
 
+  console.log('formContent', formContent);
+
+
   return (
     <div className="row">
       <div className='col-xs-12 col-sm-12 col-md-5 col-lg-5 mouse'>
@@ -79,11 +92,11 @@ const Form = () => {
         }
         <form onSubmit={formik.handleSubmit}>
           <fieldset>
-            <legend> {getFormData(lang).title}</legend>
+            <legend> {formContent.title}</legend>
             <div className='row'>
               <div className='col-mb-3 col-lg-6'>
                 <label htmlFor='name' className='form-label'>
-                  {getFormData(lang).name}
+                  {formContent.name}
                 </label>
                 <input
                   type='text'
@@ -97,7 +110,7 @@ const Form = () => {
               </div>
               <div className='col-mb-3 col-lg-6'>
                 <label htmlFor='name' className='form-label'>
-                  {getFormData(lang).lastName}
+                  {formContent.lastName}
                 </label>
                 <input
                   type='text'
@@ -115,7 +128,7 @@ const Form = () => {
             <div className="row">
               <div className='col-mb-3 col-lg-6'>
                 <label htmlFor='email' className='form-label'>
-                  {getFormData(lang).email}
+                  {formContent.email}
                 </label>
                 <input
                   type='email'
@@ -129,7 +142,7 @@ const Form = () => {
               </div>
               <div className='col-mb-3 col-lg-6'>
                 <label htmlFor='subject' className='form-label'>
-                  {getFormData(lang).subject}
+                  {formContent.subject}
                 </label>
                 <input
                   type='text'
@@ -144,7 +157,7 @@ const Form = () => {
             </div>
             <div className='mb-3 lg-6'>
               <label htmlFor='message' className='form-label'>
-                {getFormData(lang).message}
+                {formContent.message}
               </label>
               <textarea
                 id='message'
@@ -157,7 +170,7 @@ const Form = () => {
               ) : null}
             </div>
             <button type='submit' className='btn btn-dark btn-lg ' disabled={!(formik.isValid && formik.dirty)}>
-              {getFormData(lang).button}
+              {formContent.button}
               {
                 loader && (<div className="spinner-border text-light " role="status" />)
               }
@@ -166,7 +179,7 @@ const Form = () => {
         </form>
       </div>
       <div className='col-xs-6 col-sm-6 col-md-6 col-lg-6 flex justificar centrar column '>
-        <img className="img-fluid" src={contactoImg} alt='contactoImg' />
+        <img className="img-fluid" src={formContent.img} alt='contactoImg' />
       </div>
 
     </div>

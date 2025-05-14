@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
-import {  PropsContent } from './types'
+import { PropsContent } from './types'
 import { Content } from 'components/StylesComponents/ContentStyles'
-import { galleryStaticText, getWebContent} from 'data/content'
+import { galleryStaticText, getWebContent } from 'data/content'
 import { imgContentWeb } from 'data/types'
 import CloseButton from 'components/closeButton'
 import { setContentWeb } from 'store/reducers/contentWebSlice'
@@ -22,107 +22,107 @@ const ContenidoProyectos: FC<PropsContent> = ({
   const [lang] = useLocalStorage<string>('lang')
 
   useEffect(() => {
-    
-  
+
+
     fetchAndDispatch({
       url: endpoints['contentWeb'],
       staticContent: getWebContent(lang) as any,
       action: setContentWeb,
       dispatch,
-      flag: false
+      flag: false,
+      lenguage : lang
     })
   }, [])
-  
-  const contentWeb = useSelector((state:RootState)=> state.contentWeb)
+
+  const contentWeb = useSelector((state: RootState) => state.contentWeb)
 
   const [modalContentido, setmodalContentido] = useState({
-    descripcion : '',
-    img :[] ,
-    imgProyecto : {
-      img : ''
+    descripcion: '',
+    img: [],
+    imgProyecto: {
+      img: ''
     },
-    nombre : '',
-    cliente : '',
-    tecnica : '',
-    liga : ''
+    nombre: '',
+    cliente: '',
+    tecnica: '',
+    liga: ''
   })
 
 
-  const handleThumbnail = (src:string)=> {
+  const handleThumbnail = (src: string) => {
     setmodalContentido({
-      ...modalContentido ,
-      imgProyecto : {
-        img : src
+      ...modalContentido,
+      imgProyecto: {
+        img: src
       }
     });
   }
 
   const handleClick = (
-                        descripcion: string , 
-                        img:[] , 
-                        imgProyecto:any , 
-                        nombre:string,
-                        cliente:string,
-                        tecnica:string,
-                        liga:string = ''
-                        )=> {
-                          setmodalContentido({
-                            ...modalContentido,
-                            descripcion,
-                            img,
-                            imgProyecto,
-                            nombre,
-                            cliente,
-                            tecnica,
-                            liga
-                          })
-                      }
+    descripcion: string,
+    img: [],
+    imgProyecto: any,
+    nombre: string,
+    cliente: string,
+    tecnica: string,
+    liga: string = ''
+  ) => {
+    setmodalContentido({
+      ...modalContentido,
+      descripcion,
+      img,
+      imgProyecto,
+      nombre,
+      cliente,
+      tecnica,
+      liga
+    })
+  }
   return (
     <Content color={'#7BE495'}>
 
-    <CloseButton dataText='frontEnd' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
+      <CloseButton dataText='frontEnd' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
 
 
-      
+
 
       <div className='container'>
         <div className='row'>
-          <h1 className='mouse'> { contentWeb.title }</h1>
+          <h1 className='mouse'> {contentWeb.title}</h1>
         </div>
         <div className='row mouse'>
-        <p className="pt-3 pb-3">
-            { contentWeb.description }
+          <p className="pt-3 pb-3">
+            {contentWeb.description}
           </p>
         </div>
         <div className=' items flex rowS flexStart'>
-        {
-          contentWeb.img.map((item:imgContentWeb)=> (
+          {(contentWeb.img || []).map((item: imgContentWeb) => (
             <div
-            className='item-img pr-5 cursor flex column'
-            style={{
-              marginRight: '14px'
-            }}
-            data-bs-toggle='modal'
-            onClick={e=>handleClick(
-                      item.descripcion , 
-                      item.img as [] , 
-                      item.imgProyecto , 
-                      item.nombre ,
-                      item.cliente,
-                      item.tecnica,
-                      item.liga
-                      )}
-            data-bs-target='#exampleModal'
-          >
-            <img className='mr-5' src={item.imgProyecto.img} alt='img' />
-            <span className='proyectoNombre mouse pl-5 f-18 pt-2 flex column centrar'>
-              <p>{item.cliente}</p>
-            </span>
-          </div>
+              className='item-img pr-5 cursor flex column'
+              style={{
+                marginRight: '14px'
+              }}
+              data-bs-toggle='modal'
+              onClick={e => handleClick(
+                item.descripcion,
+                item.img as [],
+                item.imgProyecto,
+                item.nombre,
+                item.cliente,
+                item.tecnica,
+                item.liga
+              )}
+              data-bs-target='#exampleModal'
+            >
+              <img className='mr-5' src={item.imgProyecto.img} alt='img' />
+              <span className='proyectoNombre mouse pl-5 f-18 pt-2 flex column centrar'>
+                <p>{item.cliente}</p>
+              </span>
+            </div>
           ))
-        }
-          
-    
+          }
+
+
         </div>
       </div>
 
@@ -142,13 +142,13 @@ const ContenidoProyectos: FC<PropsContent> = ({
                 </h3>
                 &nbsp;&nbsp;
                 {
-                     modalContentido.liga!=='' ? (
-                       <a className="btn btn-danger ml-5 pl-4" 
-                          href={modalContentido.liga} 
-                          rel='noreferrer'
-                          target="_blank">{galleryStaticText.title}</a>
-                     ):null 
-                   }
+                  modalContentido.liga !== '' ? (
+                    <a className="btn btn-danger ml-5 pl-4"
+                      href={modalContentido.liga}
+                      rel='noreferrer'
+                      target="_blank">{galleryStaticText.title}</a>
+                  ) : null
+                }
                 <button
                   type='button'
                   className='btn-close'
@@ -158,19 +158,19 @@ const ContenidoProyectos: FC<PropsContent> = ({
               </div>
               <div className='modal-body'>
                 <div className=''>
-                  <img className='imagenPrincipal' 
-                        src={modalContentido.imgProyecto.img }
-                        alt='imagenPrincipal' />
+                  <img className='imagenPrincipal'
+                    src={modalContentido.imgProyecto.img}
+                    alt='imagenPrincipal' />
                 </div>
                 <div className='thumbmail-container'>
                   {
-                    modalContentido.img.map((item:{src:string})=> (
-                      <img src={item.src} 
-                          key={item.src} 
-                          className='thumbmail'
-                           onClick={()=>handleThumbnail(item.src)} 
-                           alt='item'
-                           />
+                    modalContentido.img.map((item: { src: string }) => (
+                      <img src={item.src}
+                        key={item.src}
+                        className='thumbmail'
+                        onClick={() => handleThumbnail(item.src)}
+                        alt='item'
+                      />
 
                     ))
                   }
@@ -179,9 +179,9 @@ const ContenidoProyectos: FC<PropsContent> = ({
                   {`${galleryStaticText.Client} : ${modalContentido.cliente}`} <br />
                   {`${galleryStaticText.Tecnic} : ${modalContentido.tecnica} `}
                   <br />
-                  {`${galleryStaticText.Description} : ${modalContentido.descripcion}`} <br/>
-                  
-                  </p>
+                  {`${galleryStaticText.Description} : ${modalContentido.descripcion}`} <br />
+
+                </p>
               </div>
             </div>
           </div>

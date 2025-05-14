@@ -6,6 +6,9 @@ const Skills = ({ skillData }: { skillData: ContentSkills }) => {
     return <div>No skills data available</div>;
   }
 
+
+  console.log('skillData', skillData);
+
   return (
     <div className="row">
       <div className="flex justificar centrar">

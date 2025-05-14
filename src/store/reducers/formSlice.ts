@@ -1,19 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface formData {
+export interface formData {
+
+    pageTitle: string;
+    title: string;
     name: string;
-    email: string;
-    message: string;
-    subject : string;
     lastName: string;
+    email: string;
+    subject: string;
+    message: string;
+    button: string;
+    success: string;
+    img: string;
 }
+
 
 const initialState:formData = {
     email: '',
     message: '',
     name: '',
     subject: '',
-    lastName: ''
+    lastName: '',
+    pageTitle: '',
+    title: '',
+    button: '',
+    success: '',
+    img: ''
 }
 
 const formSlice = createSlice({
@@ -26,6 +38,11 @@ const formSlice = createSlice({
             state.message = action.payload.message;
             state.subject = action.payload.subject;
             state.lastName = action.payload.lastName;
+            state.pageTitle = action.payload.pageTitle;
+            state.title = action.payload.title;
+            state.button = action.payload.button;
+            state.success = action.payload.success;
+            state.img = action.payload.img;
         }
     }
 })

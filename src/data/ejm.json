@@ -1,0 +1,112 @@
+{
+    "content": {
+    "es": {
+        "title": "Proyectos Ilustración",
+        "description": "Aquí está un poco de mi trabajo en diseño de personajes , algo que me ha gustado mucho a lo largo de los años, digitalizar bocetos y transformarlos en vectores.",
+        "img": [
+            {
+                "id": 1,
+                "nombre": "Personajes",
+                "cliente": "Personajes propios",
+                "tecnica": "Imágenes vectoriales",
+                "imgProyecto": {
+                    "img": "imgDefaultDos"
+                },
+                "descripcion": "Caricaturas para un proyecto propio en el que se tenía como límite 5 minutos para la creación del boceto",
+                "img": [
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "cangrejo"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "murcielago"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "pollo"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "nombre": "Diseño de personajes Ory el conejo",
+                "cliente": "Personaje propio",
+                "tecnica": "Imágenes vectoriales",
+                "descripcion": "Ory el conejo es un personaje propio registrado ante indautor en el 2014 ",
+                "imgProyecto": {
+                    "img": "imgDefaultDos"
+                },
+                "img": [
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "OryMago"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "ilustracion"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "trabajando"
+                    }
+                ]
+            }
+        ]
+    },
+    "en": {
+        "title": "Illustration Projects",
+        "description": "Here is a little of my work in character design, something that I have liked a lot over the years, digitizing sketches and transforming them into vectors.",
+        "img": [
+            {
+                "id": 1,
+                "nombre": "Characters",
+                "cliente": "Own characters",
+                "tecnica": "Vector images",
+                "imgProyecto": {
+                    "img": "imgDefaultDos"
+                },
+                "descripcion": "Caricatures for a personal project in which there was a limit of 5 minutes for the creation of the sketch",
+                "img": [
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "cangrejo"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "murcielago"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "pollo"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "nombre": "Character design Ory the rabbit",
+                "cliente": "Own character",
+                "tecnica": "Vector images",
+                "descripcion": "Ory the rabbit is a character of my own registered before indautor in 2014",
+                "imgProyecto": {
+                    "img": "imgDefaultDos"
+                },
+                "img": [
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "OryMago"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "ilustracion"
+                    },
+                    {
+                        "src": "imgDefaultDos",
+                        "alt": "trabajando"
+                    }
+                ]
+            }
+        ]
+    }
+}
+}

@@ -18,7 +18,7 @@ const stores = configureStore({
         about : aboutReducer,
         skills : skillsReducer,
         illustration : illustrationSlice,
-        contentWeb : contentWebSlice
+        contentWeb : contentWebSlice,
     }
 });
 

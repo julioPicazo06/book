@@ -29,6 +29,7 @@ const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustra
       action: setIllustration,
       dispatch,
       flag: false,
+      lenguage : lang
     })
 
 
@@ -109,8 +110,7 @@ interface Works {
           </p>
         </div>
         <div className=' items flex rowS flexStart'>
-        {/* <Proyecto img={OryMago} titulo={'mago'}  /> */}
-        {
+        {Array.isArray(contentIllustrationS.img) &&
           contentIllustrationS.img.map((item:imgenes)=> (
             <div
             className='item-img pr-5 cursor flex column'
