@@ -22,19 +22,19 @@ const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustra
 
 
   useEffect(() => {
-
-    fetchAndDispatch({
-      url : endpoints['illustration'] ,
-      staticContent: getJobsTimeLineContent(lang) as any,
-      action: setIllustration,
-      dispatch,
-      flag: false,
-      lenguage : lang
-    })
-
-
-
-  }, [])
+    // Solo pedir si no hay datos en el store
+    if (!Array.isArray(contentIllustrationS.img) || contentIllustrationS.img.length === 0) {
+      fetchAndDispatch({
+        url : endpoints['illustration'] ,
+        staticContent: getJobsTimeLineContent(lang) as any,
+        action: setIllustration,
+        dispatch,
+        flag: false,
+        lenguage: lang
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang]);
 
   const contentIllustrationS = useSelector((state: RootState)=> state.illustration)
 
