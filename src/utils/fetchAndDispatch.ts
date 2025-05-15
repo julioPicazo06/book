@@ -23,6 +23,15 @@ export const fetchAndDispatch = async <T>({
   flag,
   lenguage = 'en'
 }: FetchAndDispatchParams<T>) => {
+    const storageKey = `${url}_${lenguage}`;
+    const stored = sessionStorage.getItem(storageKey);
+
+    if (stored) {
+        // Si hay datos en sessionStorage, los usamos
+        dispatch(action(JSON.parse(stored)));
+        return;
+    }
+
     if(!flag){
         try {
             const response = await axios.get<Response<T>>(url);
@@ -32,7 +41,12 @@ export const fetchAndDispatch = async <T>({
 
             const data = response.data;
             const selectedLang = lenguage || 'es';
-            dispatch(action(((data as unknown) as Record<string, T>)[selectedLang]));
+            const result = ((data as unknown) as Record<string, T>)[selectedLang];
+
+            // Guardar en sessionStorage
+            sessionStorage.setItem(storageKey, JSON.stringify(result));
+
+            dispatch(action(result));
         } catch (error) {
             console.log('staticContent', staticContent);
             dispatch(action(staticContent));
