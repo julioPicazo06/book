@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
+import { setLoading } from 'store/reducers/loadingSlice';
 
 interface FetchAndDispatchParams<T> {
   url: string;
@@ -32,27 +33,17 @@ export const fetchAndDispatch = async <T>({
         return;
     }
 
-    if(!flag){
-        try {
-            const response = await axios.get<Response<T>>(url);
-            if (response.status !== 200) {
-            throw new Error('Network response was not ok');
-            }
-
-            const data = response.data;
-            const selectedLang = lenguage || 'es';
-            const result = ((data as unknown) as Record<string, T>)[selectedLang];
-
-            // Guardar en sessionStorage
-            sessionStorage.setItem(storageKey, JSON.stringify(result));
-
-            dispatch(action(result));
-        } catch (error) {
-            console.log('staticContent', staticContent);
+    try {
+        dispatch(setLoading(true));
+        if (flag) {
+            // Aquí iría la lógica de fetch si se implementa
+            console.log('Fetching from:', url);
+        } else {
             dispatch(action(staticContent));
         }
-    } else{
-      dispatch(action(staticContent));
-
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    } finally {
+        dispatch(setLoading(false));
     }
 };

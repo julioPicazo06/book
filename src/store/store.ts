@@ -1,4 +1,3 @@
-
 import { configureStore } from "@reduxjs/toolkit";
 import coverReducer from "./reducers/coverSlice";
 import formReducer from "./reducers/formSlice";
@@ -8,6 +7,7 @@ import aboutReducer from "./reducers/aboutSlice";
 import skillsReducer from "./reducers/skillsSlice";
 import illustrationSlice from "./reducers/illustrationSlice";
 import contentWebSlice from "./reducers/contentWebSlice";
+import loadingReducer from "./reducers/loadingSlice";
 
 const stores = configureStore({
     reducer : {
@@ -19,6 +19,7 @@ const stores = configureStore({
         skills : skillsReducer,
         illustration : illustrationSlice,
         contentWeb : contentWebSlice,
+        loading: loadingReducer
     }
 });
 

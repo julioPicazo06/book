@@ -12,6 +12,8 @@ import { setMenu } from 'store/reducers/menuSlice';
 import { getMenuData, menuData } from 'data/menuData';
 import { useParams } from 'react-router-dom';
 import useLocalStorage from 'hooks/useLocalStorage';
+import LanguageButton from 'components/LanguageButton/LanguageButton';
+import GlobalLoader from 'components/Loader/GlobalLoader';
 
 export const Menu = () => {
 
@@ -50,7 +52,7 @@ export const Menu = () => {
         const generateRandomNumber = () => Math.floor(Math.random() * coverColorsGreens.length ); // Genera un número entre 0 y 3
         setRandomNumber(generateRandomNumber());
 
-    }, []);
+    }, [lang]);
 
 
 
@@ -58,6 +60,8 @@ export const Menu = () => {
         <div className="principal" style={{
             backgroundColor:coverColors[randomNumber],
         }}>
+            <GlobalLoader />
+            <LanguageButton />
             <section id="portada" style={{
             overflow: 'auto'
         }}>
