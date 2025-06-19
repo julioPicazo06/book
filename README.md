@@ -2,12 +2,20 @@
 
 
 ![My Image](src/img/cat.png)
-```
 
-Make sure to replace `image.jpg` with the actual name of your image file.
+# Personal Book - Julio Picazo
 
-```
+Portfolio personal desarrollado con React, TypeScript y Redux Toolkit.
 
+## 🚀 Deployment
+
+Este proyecto está configurado para hacer deploy automático a GitHub Pages.
+
+**URL del sitio:** https://julioPicazo06.github.io/book/
+
+## 🧪 Prueba de Deploy Automático
+
+Este es un cambio de prueba para verificar que el workflow de GitHub Actions funciona correctamente.
 
 # Getting Started with Create React App
 
@@ -76,7 +84,6 @@ Runs the app in production mode using the `serve` package.
 ### `npm run optimize:build`
 
 Runs the `npm run optimize-images` command and then builds the app for production.
-```
 
 # Genereting TAGS and Version
 ## Para una actualización de patch:
