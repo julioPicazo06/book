@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.ef016ea0.css",
-    "main.js": "./static/js/main.d12dd077.js",
+    "main.js": "./static/js/main.3f4fa7ce.js",
     "static/media/resume_JulioPicazo.pdf": "./static/media/resume_JulioPicazo.9d65bac694c866bf2b7c.pdf",
     "static/media/cvJulioPicazo.pdf": "./static/media/cvJulioPicazo.6efa527c93ec1f4e6022.pdf",
     "index.html": "/index.html",
     "main.ef016ea0.css.map": "./static/css/main.ef016ea0.css.map",
-    "main.d12dd077.js.map": "./static/js/main.d12dd077.js.map"
+    "main.3f4fa7ce.js.map": "./static/js/main.3f4fa7ce.js.map"
   },
   "entrypoints": [
     "static/css/main.ef016ea0.css",
-    "static/js/main.d12dd077.js"
+    "static/js/main.3f4fa7ce.js"
   ]
 }
