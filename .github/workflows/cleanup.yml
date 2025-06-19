@@ -1,0 +1,43 @@
+name: Cleanup Preview Deployments
+
+on:
+  schedule:
+    # Ejecutar cada domingo a las 2 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch: # Permite ejecución manual
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Cleanup old preview deployments
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { data: deployments } = await github.rest.repos.listDeployments({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            environment: 'preview'
+          });
+          
+          // Eliminar deployments más antiguos de 30 días
+          const thirtyDaysAgo = new Date();
+          thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+          
+          for (const deployment of deployments) {
+            const createdAt = new Date(deployment.created_at);
+            if (createdAt < thirtyDaysAgo) {
+              console.log(`Eliminando deployment ${deployment.id} creado el ${deployment.created_at}`);
+              await github.rest.repos.deleteDeployment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                deployment_id: deployment.id
+              });
+            }
+          }
+          
+          console.log('Limpieza completada'); 

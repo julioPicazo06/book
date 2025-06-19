@@ -57,7 +57,8 @@
     "eject": "react-scripts eject",
     "build:prd": "rm -rf build docs && npm run build && mv build docs && find docs -name '*.html' -exec sed -i '' 's|src=\"/|src=\"./|g' {} + && find docs -name '*.html' -exec sed -i '' 's|href=\"/|href=\"./|g' {} + && sed -i '' 's|\"/static|\"./static|g' docs/asset-manifest.json",
     "optimize-images": "node optimize-images.mjs",
-    "deploy:gh-pages": "npm run build:prd && npx gh-pages -d build",
+    "deploy:gh-pages": "npm run build:prd && npx gh-pages -d docs",
+    "deploy": "./scripts/deploy.sh",
     "version:patch": "npm version patch && git push && git push --tags",
     "version:minor": "npm version minor && git push && git push --tags",
     "version:major": "npm version major && git push && git push --tags",
@@ -85,6 +86,7 @@
   "devDependencies": {
     "@types/react-scroll": "^1.8.10",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.1",
     "imagemin": "^9.0.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^10.0.0",
