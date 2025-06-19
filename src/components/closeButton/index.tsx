@@ -7,7 +7,7 @@ const CloseButton = ({ dataText, handleClose }: { dataText: string, handleClose:
       <CloseButtonContainer 
         className='cursor'
         data-text={dataText}
-        onClick={e => handleClose(e)}
+        onClick={(e: React.MouseEvent) => handleClose(e)}
       >
         X
       </CloseButtonContainer>
