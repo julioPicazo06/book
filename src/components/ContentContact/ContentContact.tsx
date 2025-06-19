@@ -26,7 +26,7 @@ const ContenidoContact: FC<PropsContent> = ({ handleClose }: PropsContent): JSX.
   useEffect(() => {
     fetchAndDispatch({
       url : endpoints['form'] ,
-      staticContent: formData,
+      staticContent: getFormData(lang),
       action: setForm,
       dispatch,
       flag: false,

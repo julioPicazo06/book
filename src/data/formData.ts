@@ -1,3 +1,4 @@
+import contactoImg from 'img/3.png';
 
 interface IFormData {
     pageTitle : string;
@@ -29,7 +30,7 @@ export const formData :MultiLangFormData = {
         message : "Mensaje",
         button : "Enviar",
         success : "Mensaje enviado con éxito",
-        img : "img"
+        img : contactoImg
     },
     en : {
         pageTitle : "Contact",
@@ -41,7 +42,7 @@ export const formData :MultiLangFormData = {
         message : "Message",
         button : "Send",
         success : "Message sent successfully",
-        img : "img"
+        img : contactoImg
     }
 
 }

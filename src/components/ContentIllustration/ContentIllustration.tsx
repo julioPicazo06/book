@@ -11,6 +11,7 @@ import { useSelector, useDispatch} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { RootState } from 'store/store';
 import useLocalStorage from 'hooks/useLocalStorage';
+import { isVisibleLanguage } from 'utils/utils';
 
 
 
@@ -23,6 +24,7 @@ const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustra
 
   useEffect(() => {
     // Solo pedir si no hay datos en el store
+    isVisibleLanguage('illustration');
     if (!Array.isArray(contentIllustrationS.img) || contentIllustrationS.img.length === 0) {
       fetchAndDispatch({
         url : endpoints['illustration'] ,
@@ -100,7 +102,8 @@ interface Works {
 
       <CloseButton dataText='frontEnd' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
       
-      <div className='container'>
+    <div className='content-container'>
+    <div className='container'>
         <div className='row'>
           <h1 className='mouse letraCapital'> {contentIllustrationS.title}</h1>
         </div>
@@ -127,6 +130,7 @@ interface Works {
                       item.tecnica
                       )}
             data-bs-target='#modalIllustracion'
+            key={item.id}
           >
             <img className='mr-5' src={item.imgProyecto.img} alt='imgProyecto' />
             <span className='proyectoNombre mouse pl-5 f-18 pt-2 flex column centrar'>
@@ -139,6 +143,7 @@ interface Works {
     
         </div>
       </div>
+    </div>
 
       <div>
         <div

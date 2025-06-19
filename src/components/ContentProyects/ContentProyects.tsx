@@ -79,13 +79,13 @@ const ContenidoProyectos: FC<PropsContent> = ({
     })
   }
   return (
-    <Content color={'#7BE495'}>
+    <Content color={'#7BE495'} >
 
       <CloseButton dataText='frontEnd' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
 
 
 
-
+<div className='content-container'>
       <div className='container'>
         <div className='row'>
           <h1 className='mouse'> {contentWeb.title}</h1>
@@ -124,6 +124,8 @@ const ContenidoProyectos: FC<PropsContent> = ({
 
 
         </div>
+      </div>
+
       </div>
 
       <div>

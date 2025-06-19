@@ -14,6 +14,7 @@ import { useParams } from 'react-router-dom';
 import useLocalStorage from 'hooks/useLocalStorage';
 import LanguageButton from 'components/LanguageButton/LanguageButton';
 import GlobalLoader from 'components/Loader/GlobalLoader';
+import { isVisibleLanguage } from 'utils/utils';
 
 export const Menu = () => {
 
@@ -28,6 +29,7 @@ export const Menu = () => {
     
     useEffect(() => {
     
+        isVisibleLanguage('menu');
         fetchAndDispatch({
             url: endpoints['cover'],
             staticContent: getCoverData(lang), // Add the staticContent property with a value of n

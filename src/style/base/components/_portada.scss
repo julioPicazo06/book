@@ -15,7 +15,7 @@
         flex-direction: column;
         justify-content: center;
     
-      
+    
     }
 
     .menu{
@@ -80,5 +80,29 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.content-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding-top: 8rem;
+    gap: 5rem;
+
+    @media (max-width: 768px) {
+        height: 100%;
+        width: 100%;
+        flex-direction: row;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        .items{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90vw;
+
+        }
+    }
+
 }
 

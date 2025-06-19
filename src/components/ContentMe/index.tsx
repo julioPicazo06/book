@@ -18,8 +18,8 @@ import { getAboutData } from 'data/aboutData';
 import { setAbout } from 'store/reducers/aboutSlice';
 import CloseButton from 'components/closeButton';
 import { setSkills } from 'store/reducers/skillsSlice';
-import { useParams } from 'react-router-dom';
 import useLocalStorage from 'hooks/useLocalStorage';
+import { isVisibleLanguage } from 'utils/utils';
 
 
 interface ContenidoYoModel {
@@ -38,6 +38,9 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   const dispatch = useDispatch();
 
   useEffect(() => {
+    
+    isVisibleLanguage('about');
+
     fetchAndDispatch({
       url : endpoints['jobs'] ,
       staticContent: getJobsTimeLineContent(lang) as any,
