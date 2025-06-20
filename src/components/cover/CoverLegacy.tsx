@@ -4,37 +4,34 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
 
-export const Cover: FC<any> = () => {
+export const CoverLegacy: FC<any> = () => {
 
     const { title , statement , img } = useSelector((state:RootState) => state.cover);
     
     return (
-        <section className="w-screen h-screen flex items-center justify-center flex-col">
+        <section className="contenedor-portada">
             {/* Imagen principal */}
             <div className="mb-8">
                 <img 
                     src={img} 
-                    className="w-auto h-auto max-w-[400px] max-h-[450px] object-contain mx-auto" 
+                    className="gato-img mx-auto" 
                     alt='catImage'
                 />
             </div>
 
             {/* Título con rotación */}
             <div className="mb-8">
-                <div className="rotate-[358deg] relative">
-                    <span className="font-cursive text-4xl md:text-5xl lg:text-6xl font-bold text-center block text-white">
+                <div className="rotar">
+                    <span className="letraCursiva tituloC text-center block text-white">
                         {title}
                     </span>
-                    {/* Guiones decorativos */}
-                    <span className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl">-</span>
-                    <span className="absolute -right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl">-</span>
                 </div>
             </div>
             
             {/* Statement/Descripción */}
             <div className="mb-12 max-w-2xl mx-auto px-4">
-                <div className="border border-white rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                    <p className="text-lg md:text-xl text-white text-center leading-relaxed first-letter:text-[1.1em]">
+                <div className="cuadro p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+                    <p className="textoCapital statement text-center text-white">
                         {statement}
                     </p>
                 </div>
@@ -49,7 +46,7 @@ export const Cover: FC<any> = () => {
                     duration={500}
                     className="inline-block"
                 >
-                    <button className="bg-verde-oscuro hover:bg-verde-medio text-white border border-white rounded-lg p-4 transition-all duration-300 hover:scale-110 hover:shadow-lg group">
+                    <button className="boton-inicio hover:scale-110 transition-transform duration-200 group">
                         <ExpandMoreIcon className="text-2xl group-hover:animate-bounce" />
                     </button>
                 </Link>
@@ -63,4 +60,4 @@ export const Cover: FC<any> = () => {
             </div>
         </section>
     )
-}
+} 

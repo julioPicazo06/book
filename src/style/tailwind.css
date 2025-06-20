@@ -212,4 +212,47 @@
   .menu-img {
     @apply w-12 h-12 object-cover rounded;
   }
+  
+  /* Clases específicas para Cover */
+  .contenedor-portada {
+    @apply w-screen h-screen flex items-center justify-center flex-col;
+  }
+  
+  .gato-img {
+    @apply w-[500px] h-[450px] object-contain;
+  }
+  
+  .name-container {
+    @apply flex flex-row items-center justify-center font-oswald text-4xl;
+  }
+  
+  .name-container-uno {
+    @apply text-azul-oscuro-dos;
+  }
+  
+  .name-container-dos {
+    @apply text-white;
+  }
+  
+  .boton-inicio {
+    @apply text-white border border-white rounded p-5 w-full text-2xl font-oswald cursor-pointer hover:bg-white hover:text-verde-oscuro transition-all duration-300;
+  }
+  
+  .boton-contenedor {
+    @apply flex flex-row justify-center items-center;
+  }
+  
+  .content-container {
+    @apply w-screen h-screen flex pt-32 gap-20;
+  }
+  
+  @media (max-width: 768px) {
+    .content-container {
+      @apply h-full w-full flex-row px-4;
+    }
+    
+    .content-container .items {
+      @apply flex-col items-center justify-center w-[90vw];
+    }
+  }
 } 
