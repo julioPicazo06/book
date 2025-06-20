@@ -99,6 +99,51 @@ npm run version:minor
 npm run version:major
 ```
 
+# Personal Book - Portfolio
+
+Mi portfolio personal desarrollado con React, TypeScript y Redux.
+
+## 🚀 Sistema de Versionado Automático
+
+Este proyecto incluye un sistema de versionado automático basado en tags en los mensajes de commit.
+
+### Uso Rápido
+
+```bash
+# Corrección de bug
+git commit -m "fix: resolver problema [patch]"
+
+# Nueva funcionalidad  
+git commit -m "feat: agregar nueva sección [minor]"
+
+# Cambio mayor
+git commit -m "feat: reestructurar app [major]"
+```
+
+Ver [VERSIONING.md](./VERSIONING.md) para más detalles.
+
+## 🛠️ Scripts Disponibles
+
+- `npm start` - Iniciar en desarrollo
+- `npm run build:prd` - Build para producción
+- `npm run deploy:gh-pages` - Deploy a GitHub Pages
+- `npm run deploy:auto` - Deploy automático con versionado
+- `npm run auto-version` - Solo versionado automático
+
+## 📦 Tecnologías
+
+- React 18
+- TypeScript
+- Redux Toolkit
+- Material-UI
+- Bootstrap
+- SASS
+- React Router
+
+## 🌐 Demo
+
+[Ver en vivo](https://julioPicazo06.github.io/book)
+
 
 
 
