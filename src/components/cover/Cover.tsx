@@ -9,58 +9,47 @@ export const Cover: FC<any> = () => {
     const { title , statement , img } = useSelector((state:RootState) => state.cover);
     
     return (
-        <section className="w-screen h-screen flex items-center justify-center flex-col">
+        <section className="contenedor-portada">
             {/* Imagen principal */}
-            <div className="mb-8">
+            <div className="imagen-principal">
                 <img 
                     src={img} 
-                    className="w-auto h-auto max-w-[400px] max-h-[450px] object-contain mx-auto" 
+                    className="gato-img" 
                     alt='catImage'
                 />
             </div>
 
             {/* Título con rotación */}
-            <div className="mb-8">
-                <div className="rotate-[358deg] relative">
-                    <span className="font-cursive text-4xl md:text-5xl lg:text-6xl font-bold text-center block text-white">
+            <div className="titulo-container">
+                <div className="rotar">
+                    <span className="letraCursiva tituloC">
                         {title}
                     </span>
-                    {/* Guiones decorativos */}
-                    <span className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl">-</span>
-                    <span className="absolute -right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl">-</span>
                 </div>
             </div>
             
             {/* Statement/Descripción */}
-            <div className="mb-12 max-w-2xl mx-auto px-4">
-                <div className="border border-white rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                    <p className="text-lg md:text-xl text-white text-center leading-relaxed first-letter:text-[1.1em]">
+            <div className="statement-container">
+                <div className="cuadro">
+                    <p className="textoCapital statement">
                         {statement}
                     </p>
                 </div>
             </div>
             
             {/* Botón de navegación */}
-            <div className="mt-8">
+            <div className="boton-container">
                 <Link 
                     to="menu"
                     spy={true}
                     smooth={true}
                     duration={500}
-                    className="inline-block"
                 >
-                    <button className="bg-verde-oscuro hover:bg-verde-medio text-white border border-white rounded-lg p-4 transition-all duration-300 hover:scale-110 hover:shadow-lg group">
-                        <ExpandMoreIcon className="text-2xl group-hover:animate-bounce" />
+                    <button className="boton-inicio">
+                        <ExpandMoreIcon />
                     </button>
                 </Link>
             </div>
-
-            {/* Indicador de scroll */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-                    <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-                </div>
-            </div>
         </section>
     )
-}
+} 

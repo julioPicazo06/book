@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { AboutData } from "data/aboutData";
 
 
-export interface Links { 
+export interface Links {
     title: string;
     url: string;
     icon: string;
- }
+}
 
 
 export const initialState: AboutData = {
