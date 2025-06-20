@@ -1,4 +1,3 @@
-
 import {  useEffect } from 'react'
 import {
   getJobsTimeLineContent,
@@ -77,7 +76,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       lenguage: lang
     });
 
-  }, [])
+  }, [lang, dispatch])
 
 
   const { jobHistory , educationHistory } = useSelector((state: RootState) => state.history)

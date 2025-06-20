@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getCoverData } from "data/coverData";
 
 interface CoverState {
     title:string;
@@ -7,9 +8,9 @@ interface CoverState {
 }
 
 const initialState:CoverState = {
-    title: '',
-    statement: '',
-    img: ''
+    title: getCoverData('en').title,
+    statement: getCoverData('en').statement,
+    img: getCoverData('en').img
 }
 
 const coverSlice = createSlice({

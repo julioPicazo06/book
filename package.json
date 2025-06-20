@@ -56,7 +56,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "build:prd": "rm -rf build docs && npm run build && mv build docs && find docs -name '*.html' -exec sed -i '' 's|src=\"/|src=\"./|g' {} + && find docs -name '*.html' -exec sed -i '' 's|href=\"/|href=\"./|g' {} + && sed -i '' 's|\"/static|\"./static|g' docs/asset-manifest.json",
+    "build:prd": "rm -rf docs && npm run build && mv build docs",
     "optimize-images": "node optimize-images.mjs",
     "deploy:gh-pages": "npm run build:prd && npx gh-pages -d docs",
     "deploy": "./scripts/deploy.sh",
@@ -64,7 +64,11 @@
     "version:minor": "npm version minor && git push && git push --tags",
     "version:major": "npm version major && git push && git push --tags",
     "start:prd": "serve -s docs",
-    "optimize:build": "npm run optimize-images && npm run build:prd"
+    "optimize:build": "npm run optimize-images && npm run build:prd",
+    "auto-version": "node scripts/auto-version.js",
+    "auto-deploy": "node scripts/auto-deploy.js",
+    "setup-hooks": "chmod +x scripts/post-commit && cp scripts/post-commit .git/hooks/",
+    "deploy:auto": "npm run auto-deploy"
   },
   "eslintConfig": {
     "extends": [

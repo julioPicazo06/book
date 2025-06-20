@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 function useLocalStorage<T>(key: string) {
     // Leer el valor inicial del localStorage
-    const readValue = () => {
+    const readValue = useCallback(() => {
         if (typeof window === 'undefined') {
             return undefined;
         }
@@ -14,7 +14,7 @@ function useLocalStorage<T>(key: string) {
             console.warn(`Error reading localStorage key "${key}":`, error);
             return undefined;
         }
-    };
+    }, [key]);
 
     // Estado para almacenar el valor
     const [storedValue, setStoredValue] = useState<T | undefined>(readValue);
@@ -35,7 +35,7 @@ function useLocalStorage<T>(key: string) {
     // Efecto para sincronizar el estado con el localStorage
     useEffect(() => {
         setStoredValue(readValue());
-    }, []);
+    }, [readValue]);
 
     return [storedValue, setValue] as const;
 }

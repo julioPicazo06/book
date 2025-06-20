@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Hook de Git que se ejecuta después de cada commit
+# Verifica si el mensaje de commit contiene tags de versionado
+
+echo "🔍 Verificando tags de versionado en el commit..."
+
+# Obtener el mensaje del último commit
+COMMIT_MSG=$(git log -1 --pretty=%B)
+
+# Verificar si contiene tags de versionado
+if [[ $COMMIT_MSG == *"[major]"* ]] || [[ $COMMIT_MSG == *"[minor]"* ]] || [[ $COMMIT_MSG == *"[patch]"* ]]; then
+    echo "✅ Tags de versionado detectados. Ejecutando versionado automático..."
+    node scripts/auto-version.js
+else
+    echo "ℹ️  No se detectaron tags de versionado en el commit."
+    echo "💡 Usa [patch], [minor] o [major] en tu mensaje de commit para versionado automático."
+fi 

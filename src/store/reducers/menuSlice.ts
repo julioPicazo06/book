@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-
+import { getMenuData } from "data/menuData";
 
 export interface MenuItem {
     title: string;
@@ -33,7 +32,7 @@ export const menuData: Record<string, MenuItem> = {
 
 const menuSlice = createSlice({
     name: 'menu',
-    initialState: menuData,
+    initialState: getMenuData('en'),
     reducers: {
         setMenu: (state: Record<string, MenuItem>, action: { payload: Record<string, MenuItem> }) => {
             state.me.title = action.payload.me.title;

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Dispatch } from 'redux';
 import { setLoading } from 'store/reducers/loadingSlice';
 
@@ -9,11 +8,6 @@ interface FetchAndDispatchParams<T> {
   dispatch: Dispatch<any>;
   flag: boolean;
   lenguage?: string;
-}
-
-interface Response<T> {
-  content: T;
-  status: number;
 }
 
 export const fetchAndDispatch = async <T>({

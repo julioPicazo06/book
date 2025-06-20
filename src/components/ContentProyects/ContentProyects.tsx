@@ -9,7 +9,6 @@ import { endpoints } from 'utils/endpoints'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAndDispatch } from 'utils/fetchAndDispatch'
 import { RootState } from 'store/store'
-import { useParams } from 'react-router-dom'
 import useLocalStorage from 'hooks/useLocalStorage'
 
 
@@ -32,7 +31,7 @@ const ContenidoProyectos: FC<PropsContent> = ({
       flag: false,
       lenguage : lang
     })
-  }, [])
+  }, [lang, dispatch])
 
   const contentWeb = useSelector((state: RootState) => state.contentWeb)
 
