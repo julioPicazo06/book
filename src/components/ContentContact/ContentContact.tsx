@@ -40,7 +40,7 @@ const ContenidoContact: FC<PropsContent> = ({ handleClose }: PropsContent): JSX.
 
       <CloseButton dataText='yo' handleClose={(e: React.MouseEvent<Element, MouseEvent>) => handleClose(e)} />
 
-      <div className='container'>
+      <div className='container pt-5 pb-5' style={{paddingTop: '5rem'}}>
         <div className='row'>
           <h1 className='mouse '>{getFormData(lang).pageTitle}</h1>
         </div>

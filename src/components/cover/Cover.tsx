@@ -8,63 +8,48 @@ export const Cover: FC<any> = () => {
 
     const { title , statement , img } = useSelector((state:RootState) => state.cover);
     
-    
-
     return (
-        <section className="contenedor-portada portada" >
-
-
-            <div className="row">
-                <img src={img} className="img-fluid" style={{
-                    maxWidth: "400px"
-                }}  alt='catImage'/>
+        <section className="contenedor-portada">
+            {/* Imagen principal */}
+            <div className="imagen-principal">
+                <img 
+                    src={img} 
+                    className="gato-img" 
+                    alt='catImage'
+                />
             </div>
 
-
-
-            <div className="row">
-                <div>
-                    <div className=" rotar ">
-                        <span className="letraCursiva tituloC ">
-                            { title }
-                        </span>
-
-                    </div>
-
+            {/* Título con rotación */}
+            <div className="titulo-container">
+                <div className="rotar">
+                    <span className="letraCursiva tituloC">
+                        {title}
+                    </span>
                 </div>
             </div>
-            <div className="row">
-                <div className="mouse  flex blanco column cuadro">
-
-
-
+            
+            {/* Statement/Descripción */}
+            <div className="statement-container">
+                <div className="cuadro">
                     <p className="textoCapital statement">
                         {statement}
-
                     </p>
-
-
-
-                </div>
-
-            </div>
-            <div className="row">
-                <div className=" mt-1">
-                    <Link to="menu"
-                        spy={true}
-                        smooth={true}
-                        duration={500}>
-
-                        <span className="btn btn-dark">
-                            <ExpandMoreIcon/>
-                        </span>
-                    </Link>
                 </div>
             </div>
-
-
-
-
+            
+            {/* Botón de navegación */}
+            <div className="boton-container">
+                <Link 
+                    to="menu"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                >
+                    <button className="boton-inicio">
+                        <ExpandMoreIcon />
+                    </button>
+                </Link>
+            </div>
         </section>
     )
-}
+} 

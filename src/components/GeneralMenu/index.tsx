@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Cover } from 'components/cover/Cover'
+import { Cover } from '../cover/Cover'
 import { MenuGeneral } from 'components/GeneralMenu/GeneralMenu'
 import {  coverColors, coverColorsGreens } from 'data/colorData';
 import { getCoverData } from 'data/coverData';

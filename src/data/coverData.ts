@@ -19,7 +19,7 @@ export const coverData:CoverData = {
 
 export const coverDataMultilenguage: MultiLangCoverData = {
     es: {
-        title: 'Julio Eduardo Picazo Rodriguez',
+        title: '- Julio Eduardo Picazo Rodriguez -',
         statement: "Transformo ideas en código funcional y eficiente... y también hago dibujitos.",
         img: cat
     },

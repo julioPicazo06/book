@@ -44,8 +44,9 @@
     }
 
 .gato-img{
-    width: 500px;
-    height: 450px;
+    width: 350px;
+    height: auto;
+    object-fit: contain;
 }
 
 
@@ -55,7 +56,10 @@
     align-items: center;
     justify-content: center;
     font-family: $Oswald ;
-    font-size: 4em;                                                                                                                                                                                             ;
+    font-size:4em;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+                                                                                                                                                                                    ;
     &-uno{                                                                                          
         color: $color-azul-oscuro-dos;
     }
@@ -65,14 +69,16 @@
 }
 
 .boton-inicio{
-    color: white;
-    border: white solid 1px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de transparencia */
+    color: white; /* Ícono blanco */
+    border: none;
     border-radius: 5px;
-    padding: 20px;
-    width: 100%;
-    font-size: 2em;
-    font-family: $Oswald;
     cursor: pointer;
+    width: 50px; /* Ancho fijo */
+    height: 50px; /* Alto fijo */
+    display: flex; /* Para centrar el ícono */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
 }
 
 .boton-contenedor{
@@ -80,6 +86,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem; /* Espacio superior */
 }
 
 .content-container{
@@ -104,5 +111,28 @@
         }
     }
 
+}
+
+.statement-container {
+    margin-top: 1rem;
+    padding: 0 2rem;
+    max-width: 600px; /* Ancho máximo para el contenedor del texto */
+    width: 100%;
+}
+
+.cuadro {
+    border: 1px dashed rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.statement {
+    font-family: $Oswald, sans-serif; /* Usamos la fuente Oswald */
+    font-size: 1rem; /* Tamaño de fuente más grande */
+    color: black;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 1px;
 }
 
