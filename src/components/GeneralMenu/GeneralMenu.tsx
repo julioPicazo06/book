@@ -144,12 +144,12 @@ export const MenuGeneral:FC = ():JSX.Element => {
                 )
             }
 
-            <MenuG  display={'flex'} row={true} wrap={true} color={"#56C596"}>
+            <MenuG  display={'flex'} $row={true} $wrap={true} color={"#56C596"}>
                 <Modulo
                     background={menuData['me'].color}
                     width={visible.yo.width}
                     height={visible.yo.height}
-                    display={visible.yo.visible}>
+                    $display={visible.yo.visible}>
                     {
                         visible.yo.width === 50 ? (
                             <MenuSection className="flex column justificar center height50">
@@ -167,7 +167,7 @@ export const MenuGeneral:FC = ():JSX.Element => {
                     background={menuData['frontend'].color}
                     width={visible.frontEnd.width}
                     height={visible.frontEnd.height}
-                    display={visible.frontEnd.visible}>
+                    $display={visible.frontEnd.visible}>
                     {
                         visible.frontEnd.width === 50 ? (
                             <MenuSection className="flex column justificar center height50">
@@ -185,7 +185,7 @@ export const MenuGeneral:FC = ():JSX.Element => {
                     background={menuData['ilustration'].color}
                     width={visible.illustracion.width}
                     height={visible.illustracion.height}
-                    display={visible.illustracion.visible}>
+                    $display={visible.illustracion.visible}>
                     {visible.illustracion.width === 50 ? (<MenuSection className="flex column justificar center height50">
                         <div className="item-hover" >
                             <img className="menu-img" data-text="illustracion" onClick={(e) => handleClick(e)} src={menuData['ilustration'].img} alt="illustracion" />
@@ -200,7 +200,7 @@ export const MenuGeneral:FC = ():JSX.Element => {
                     background={menuData['contact'].color}
                     width={visible.contacto.width}
                     height={visible.contacto.height}
-                    display={visible.contacto.visible}>
+                    $display={visible.contacto.visible}>
                     {
                         visible.contacto.width === 50 ? (
                             <MenuSection className="flex column justificar center height50">
