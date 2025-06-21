@@ -31,4 +31,3 @@ export const aboutSlice = createSlice({
 
 export const { setAbout } = aboutSlice.actions;
 export default aboutSlice.reducer;
- 

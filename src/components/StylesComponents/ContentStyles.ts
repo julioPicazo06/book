@@ -15,14 +15,14 @@ export interface ModuloType {
     width? : number ;
     height? : number;
     background: string;
-    display?: boolean;
+    $display?: boolean;
 }
 
 export interface MenuGType {
     display? : string;
     column? : boolean;
-    row?:boolean;
-    wrap?:boolean;
+    $row?:boolean;
+    $wrap?:boolean;
     color?:string;
 
 }
@@ -83,8 +83,8 @@ export const MenuG = styled.div<MenuGType>`
     height:100vh;
     display : ${props => `${props.display}`}; 
     ${props => props.column && `flex-direction:column;`}  ;
-    ${props => props.row && `flex-direction:row;`}  ;         
-    ${props => props.wrap &&`flex-wrap:wrap`};
+    ${props => props.$row && `flex-direction:row;`}  ;         
+    ${props => props.$wrap &&`flex-wrap:wrap`};
     ${props => props.color && `background-color:${props.color}`}
     
 `
@@ -94,7 +94,7 @@ export const Modulo = styled.div<ModuloType>`
     background-color : ${props=> `${props.background}`};
     width : ${props => `${props.width}%`}; 
     height : ${props => `${props.width}vh`};
-    display: ${props=> !props.display ? `none` : `block`} ;
+    display: ${props=> !props.$display ? `none` : `block`} ;
     transition-property : width , display ;
     transition-duration:  .3s , .3s;
     transition-timing-function: ease-out;
