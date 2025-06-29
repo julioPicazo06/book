@@ -185,6 +185,33 @@ Estos tags ayudan a automatizar el versionado semántico del proyecto.
 
 Consulta la guía completa en [COMMIT_CONVENTION.md](./COMMIT_CONVENTION.md).
 
+## Flujo de Deploy y CI/CD
+
+Este proyecto utiliza GitHub Actions para automatizar el build y el deploy a producción.
+
+### ¿Cuándo se hace deploy a producción?
+
+- **Solo se hace deploy a producción cuando un Pull Request es mergeado a `main` o `master`.**
+- No se hace deploy en pushes directos ni en previews de PR.
+- Esto evita conflictos y builds duplicados.
+
+### ¿Cómo funciona?
+
+- Cuando un PR es mergeado a `main` o `master`, el workflow de GitHub Actions:
+  1. Instala dependencias
+  2. Optimiza imágenes
+  3. Genera el build de producción
+  4. Verifica que todos los archivos estén presentes
+  5. Publica el contenido en GitHub Pages
+
+Puedes ver la configuración en `.github/workflows/deploy.yml`.
+
+### ¿Por qué se hace así?
+
+- **Evita deploys duplicados**: No se dispara el deploy en cada push o actualización de PR.
+- **Solo producción estable**: Solo el código aprobado y mergeado llega a producción.
+- **Más control**: El deploy es predecible y fácil de auditar.
+
 ---
 
 
