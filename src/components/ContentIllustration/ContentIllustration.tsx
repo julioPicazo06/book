@@ -22,6 +22,7 @@ const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustra
 
 
   useEffect(() => {
+    console.log('[ContentIllustration] useEffect ejecutado', lang);
     // Solo pedir si no hay datos en el store
     isVisibleLanguage('illustration');
     if (!Array.isArray(contentIllustrationS.img) || contentIllustrationS.img.length === 0) {
@@ -30,7 +31,7 @@ const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustra
         staticContent: getJobsTimeLineContent(lang) as any,
         action: setIllustration,
         dispatch,
-        flag: false,
+        flag: true,
         lenguage: lang
       });
     }

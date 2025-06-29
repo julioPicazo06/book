@@ -21,14 +21,13 @@ const ContenidoProyectos: FC<PropsContent> = ({
   const [lang] = useLocalStorage<string>('lang')
 
   useEffect(() => {
-
-
+    console.log('[ContentProyects] useEffect ejecutado', lang);
     fetchAndDispatch({
       url: endpoints['contentWeb'],
       staticContent: getWebContent(lang) as any,
       action: setContentWeb,
       dispatch,
-      flag: false,
+      flag: true,
       lenguage : lang
     })
   }, [lang, dispatch])
@@ -95,8 +94,9 @@ const ContenidoProyectos: FC<PropsContent> = ({
           </p>
         </div>
         <div className=' items flex rowS flexStart'>
-          {(contentWeb.img || []).map((item: imgContentWeb) => (
+          {(contentWeb.img || []).map((item: imgContentWeb, index: number) => (
             <div
+              key={item.nombre || index}
               className='item-img pr-5 cursor flex column'
               style={{
                 marginRight: '14px'

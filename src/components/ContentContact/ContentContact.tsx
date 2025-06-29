@@ -21,12 +21,13 @@ const ContenidoContact: FC<PropsContent> = ({ handleClose }: PropsContent): JSX.
   const [lang] = useLocalStorage<string>('lang');
 
   useEffect(() => {
+    console.log('[ContentContact] useEffect ejecutado', lang);
     fetchAndDispatch({
       url : endpoints['form'] ,
       staticContent: getFormData(lang),
       action: setForm,
       dispatch,
-      flag: false,
+      flag: true,
       lenguage: lang
     });
   }, [lang, dispatch]);

@@ -1,7 +1,3 @@
-
-
-
-
 import { AboutData } from 'data/aboutData';
 import React from 'react';
 
@@ -9,8 +5,15 @@ interface AboutProps {
   aboutData: AboutData;
 }
 
-
 const About = ({ aboutData }: AboutProps) => {
+  // Validar que aboutData existe y tiene las propiedades necesarias
+  if (!aboutData || !aboutData.title || !aboutData.text) {
+    return (
+      <div className='row'>
+        <h1 className='mouse'>Cargando...</h1>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -27,7 +30,7 @@ const About = ({ aboutData }: AboutProps) => {
               {aboutData.text}
               <br />
 
-              {
+              {aboutData.links && aboutData.links.length > 0 && 
                 aboutData.links.map((link, index) => (
                  <>
                    <a key={index} className="btn btn-dark btn-lg mt-2"

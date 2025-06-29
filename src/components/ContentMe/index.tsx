@@ -37,7 +37,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   const dispatch = useDispatch();
 
   useEffect(() => {
-    
+    console.log('[ContentMe] useEffect ejecutado', lang);
     isVisibleLanguage('about');
 
     fetchAndDispatch({
@@ -45,7 +45,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       staticContent: getJobsTimeLineContent(lang) as any,
       action: setEducationHistory,
       dispatch,
-      flag: false,
+      flag: true,
       lenguage: lang
     })
 
@@ -54,7 +54,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       staticContent: getTimeLineContent(lang) as any,
       action: setJobHistory,
       dispatch,
-      flag: false,
+      flag: true,
       lenguage: lang
     });
 
@@ -63,7 +63,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       staticContent: getAboutData(lang),
       action: setAbout,
       dispatch,
-      flag: false,
+      flag: true,
       lenguage: lang
     });
 
@@ -72,7 +72,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
       staticContent: contentSkills,
       action: setSkills,
       dispatch,
-      flag: false,
+      flag: true,
       lenguage: lang
     });
 
