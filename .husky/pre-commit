@@ -1,13 +1,1 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-# Ejecutar linting si está disponible
-echo "🔍 Ejecutando linting..."
-npm run lint 2>/dev/null || echo "⚠️  Linting no configurado, continuando..."
-
-# Verificar que no hay archivos sin agregar
-if [ -n "$(git status --porcelain)" ]; then
-  echo "✅ Archivos listos para commit"
-else
-  echo "⚠️  No hay cambios para commit"
-fi
+npm run lint 2>/dev/null || echo "⚠️  Linting no configurado, continuando..." 
