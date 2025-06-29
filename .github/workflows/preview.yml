@@ -19,13 +19,16 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --legacy-peer-deps
       
     - name: Optimize images
       run: npm run optimize-images
       
     - name: Build project
       run: CI=false npm run build:prd
+      
+    - name: Verify build
+      run: npm run verify-build
       
     - name: Deploy Preview
       uses: peaceiris/actions-gh-pages@v3
