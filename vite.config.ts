@@ -21,7 +21,13 @@ export default defineConfig({
   },
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif'],
   build: {
-    outDir: 'build',
+    outDir: 'docs',
     assetsInlineLimit: 1048576, // 1MB
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
+    },
   },
+  publicDir: 'public',
 }) 
