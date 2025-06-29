@@ -23,6 +23,7 @@ const LanguageButton: React.FC = () => {
     }, [isVisible]);
 
     const handleLanguageChange = async () => {
+        console.log('[LanguageButton] handleLanguageChange ejecutado', lang);
         setIsLoading(true);
         const newLang = lang === 'es' ? 'en' : 'es';
         setLang(newLang);
@@ -38,7 +39,7 @@ const LanguageButton: React.FC = () => {
                     staticContent: getCoverData(newLang),
                     action: setCover,
                     dispatch,
-                    flag: false,
+                    flag: true,
                     lenguage: newLang
                 }),
                 fetchAndDispatch({
@@ -46,7 +47,7 @@ const LanguageButton: React.FC = () => {
                     staticContent: getMenuData(newLang),
                     action: setMenu,
                     dispatch,
-                    flag: false,
+                    flag: true,
                     lenguage: newLang
                 })
             ]);

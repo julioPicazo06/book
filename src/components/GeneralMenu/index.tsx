@@ -27,7 +27,7 @@ export const Menu = () => {
 
     
     useEffect(() => {
-    
+        console.log('[GeneralMenu] useEffect ejecutado', lang);
         isVisibleLanguage('menu');
         
         // Cargar datos con manejo de errores
@@ -38,7 +38,7 @@ export const Menu = () => {
                     staticContent: getCoverData(lang), // Add the staticContent property with a value of n
                     action: setCover,
                     dispatch,
-                    flag: false,
+                    flag: true,
                     lenguage : lang
                 });
 
@@ -47,7 +47,7 @@ export const Menu = () => {
                     staticContent: getMenuData(lang),
                     action: setMenu,
                     dispatch,
-                    flag: false,
+                    flag: true,
                     lenguage : lang
                 });
 

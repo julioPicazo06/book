@@ -144,6 +144,49 @@ Ver [VERSIONING.md](./VERSIONING.md) para más detalles.
 
 [Ver en vivo](https://julioPicazo06.github.io/book)
 
+## Convención de Commits
+
+Este proyecto utiliza la convención [Conventional Commits](https://www.conventionalcommits.org/) para los mensajes de commit. Esto ayuda a mantener un historial de cambios claro y automatizar procesos como changelogs y releases.
+
+### Formato básico
+
+```
+<tipo>(<scope>): descripción breve [tag]
+```
+
+- **tipo**: El tipo de cambio (por ejemplo: feat, fix, docs, style, refactor, chore, etc.)
+- **scope**: (opcional) La parte del proyecto afectada (por ejemplo: component, api, store, etc.)
+- **descripción breve**: Explicación corta del cambio, en minúsculas y sin punto final
+- **[tag]**: (opcional) Puedes añadir `[patch]`, `[minor]` o `[major]` para indicar el tipo de versión semántica que debe generarse
+
+### Ejemplos válidos
+
+- `feat(component): add new skills section [minor]`
+- `fix(api): resolve sessionStorage caching issue [patch]`
+- `docs: update README with commit convention [patch]`
+- `refactor(utils): improve fetchAndDispatch function [patch]`
+- `feat: add dark mode support [major]`
+
+### Ejemplos inválidos
+
+- `add new feature`
+- `fix: `
+- `feat: add new feature.` (no debe llevar punto al final)
+
+### Uso de tags `[patch]`, `[minor]`, `[major]`
+
+- **[patch]**: Para correcciones menores o bugs que no afectan la API pública
+- **[minor]**: Para nuevas funcionalidades que no rompen compatibilidad
+- **[major]**: Para cambios que rompen compatibilidad o grandes refactorizaciones
+
+Estos tags ayudan a automatizar el versionado semántico del proyecto.
+
+### Más información
+
+Consulta la guía completa en [COMMIT_CONVENTION.md](./COMMIT_CONVENTION.md).
+
+---
+
 
 
 
