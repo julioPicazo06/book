@@ -21,6 +21,9 @@ jobs:
     - name: Install dependencies
       run: npm ci --legacy-peer-deps
       
+    - name: Install libpng12
+      run: sudo apt-get update && sudo apt-get install -y libpng12-0 || sudo apt-get install -y libpng-dev
+      
     - name: Optimize images
       run: npm run optimize-images
       
