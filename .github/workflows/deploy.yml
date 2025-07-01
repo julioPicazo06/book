@@ -27,7 +27,11 @@ jobs:
         run: CI=false npm run build:prd
       - name: Verify build
         run: npm run verify-build
+      - name: Debug PR merged status
+        run: |
+          echo "PR merged: ${{ github.event.pull_request.merged }}"
       - name: Deploy to GitHub Pages
+        if: github.event.pull_request.merged == true
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
