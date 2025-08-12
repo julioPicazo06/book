@@ -51,7 +51,7 @@
     "preview": "vite preview",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "build:prd": "rm -rf docs && npm run build",
+    "build:prd": "rm -rf docs && npm run build && node scripts/fix-paths.js",
     "verify-build": "node verify-build.js",
     "optimize-images": "node optimize-images.mjs",
     "deploy:gh-pages": "npm run build:prd && npx gh-pages -d docs",
