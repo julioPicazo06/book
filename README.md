@@ -13,7 +13,7 @@ Este proyecto está configurado para hacer deploy automático a GitHub Pages.
 
 **URL del sitio:** https://julioPicazo06.github.io/book/
 
-**Estado del workflow:** ✅ Activado y funcionando correctamente
+**Workflow de despliegue:** ✅ Activado para Pull Requests
 
 ## 🧪 Prueba de Deploy Automático
 
