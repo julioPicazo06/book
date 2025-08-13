@@ -1,27 +1,25 @@
+import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store/store';
+import { logger } from 'utils/logger';
+import { Content } from 'components/StylesComponents/ContentStyles';
 import { ContentSkills } from 'data/imgContent';
-import React from 'react';
 
 const Skills = ({ skillData }: { skillData: ContentSkills }) => {
-  console.log('=== SKILLS COMPONENT DEBUG ===');
-  console.log('skillData recibido:', skillData);
-  console.log('skillData.title:', skillData?.title);
-  console.log('skillData.imgSkills:', skillData?.imgSkills);
-  console.log('skillData.imgSkills es array:', Array.isArray(skillData?.imgSkills));
-  console.log('skillData.imgSkills length:', skillData?.imgSkills?.length);
 
+logger.log('skillData', skillData);
   // Validar que skillData existe y tiene las propiedades necesarias
   if (!skillData || !skillData.title || !skillData.imgSkills || !Array.isArray(skillData.imgSkills) || skillData.imgSkills.length === 0) {
-    console.log('Skills: Mostrando mensaje de carga...');
+
     return (
       <div className="row">
-        <div className="flex justificar centrar">
-          <h3>Cargando skills...</h3>
+        <div className="col-12">
+          <p>Cargando skills...</p>
         </div>
       </div>
     );
   }
 
-  console.log('Skills: Renderizando skills con', skillData.imgSkills.length, 'elementos');
 
   return (
     <div className="row">
@@ -33,19 +31,36 @@ const Skills = ({ skillData }: { skillData: ContentSkills }) => {
         className="flex rowS mt-5 justificar centrar"
         style={{
           flexWrap: 'wrap',
+          // backgroundColor: 'rgba(0, 0, 0, 0.2)',
+          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+          borderRadius: '10px',
+          padding: '10px',
+          margin: '10px',
         }}
       >
-        {skillData.imgSkills.map(({ src, alt }, index) => {
-          console.log(`Renderizando skill ${index}:`, { src, alt });
+        {skillData.imgSkills.map(({ src, alt , width }, index) => {
+        
           return (
+            <div 
+              key={alt || index}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
             <img 
-              className="img-fluid imagenSkills" 
               src={src} 
               alt={alt} 
-              key={alt || index}
-              onLoad={() => console.log(`Imagen ${alt} cargada correctamente`)}
-              onError={(e) => console.error(`Error cargando imagen ${alt}:`, e)}
+              style={{
+                width: `${width}rem`,
+                padding: '0.5rem',
+              }}
+              onLoad={() => logger.log(`Imagen ${alt} cargada correctamente`)}
+              onError={(e) => logger.error(`Error cargando imagen ${alt}:`, e)}
             />
+            <span>{alt}</span>
+            </div>
           );
         })}
       </div>

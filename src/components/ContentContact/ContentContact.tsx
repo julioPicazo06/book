@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from 'react';
+import { logger } from 'utils/logger';
 import { Content } from 'components/StylesComponents/ContentStyles';
 import Form from './Form';
 import CloseButton from 'components/closeButton';
@@ -21,7 +22,7 @@ const ContenidoContact: FC<PropsContent> = ({ handleClose }: PropsContent): JSX.
   const [lang] = useLocalStorage<string>('lang');
 
   useEffect(() => {
-    console.log('[ContentContact] useEffect ejecutado', lang);
+    logger.log('[ContentContact] useEffect ejecutado', lang);
     fetchAndDispatch({
       url : endpoints['form'] ,
       staticContent: getFormData(lang),

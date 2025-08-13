@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import useLocalStorage from 'hooks/useLocalStorage';
 import { useDispatch } from 'react-redux';
 import { fetchAndDispatch } from 'utils/fetchAndDispatch';
@@ -11,6 +11,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { LanguageButtonContainer } from './styles';
 import { When } from 'components/When/When';
 import { getWhereIAm } from 'utils/utils';
+import { logger } from 'utils/logger';
 
 const LanguageButton: React.FC = () => {
     const [lang, setLang] = useLocalStorage<string>('lang');
@@ -23,7 +24,7 @@ const LanguageButton: React.FC = () => {
     }, [isVisible]);
 
     const handleLanguageChange = async () => {
-        console.log('[LanguageButton] handleLanguageChange ejecutado', lang);
+        logger.log('[LanguageButton] handleLanguageChange ejecutado', lang);
         setIsLoading(true);
         const newLang = lang === 'es' ? 'en' : 'es';
         setLang(newLang);

@@ -1,8 +1,7 @@
-import {  useEffect } from 'react'
-import {
-  getJobsTimeLineContent,
-  getTimeLineContent,
-} from 'data/TimeLineContent'
+import React, { FC, useEffect, useState } from 'react';
+import { getJobsTimeLineContent } from 'data/content';
+import { getTimeLineContent } from 'data/TimeLineContent';
+import { logger } from 'utils/logger';
 import { Content } from 'components/StylesComponents/ContentStyles';
 import About from './About';
 import Skills from './Skills';
@@ -37,7 +36,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('[ContentMe] useEffect ejecutado', lang);
+    logger.log('[ContentMe] useEffect ejecutado', lang);
     isVisibleLanguage('about');
 
     fetchAndDispatch({
@@ -83,7 +82,7 @@ export const ContenidoYo: React.FC<ContenidoYoModel> = ({
   const aboutDataR = useSelector((state: RootState) => state.about);
   const skillsR = useSelector((state: RootState) => state.skills);
 
-  console.log('skillsR', skillsR);
+  logger.log('skillsR', skillsR);
   return (
     <>
       <Content color={'#56C596'}>

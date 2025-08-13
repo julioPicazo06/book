@@ -4,6 +4,7 @@ export interface TimeLineContentModel {
     date : string;
     position : string;
     viewDate?: string;
+    current?: boolean;
 }
 
 export interface MultiLangTimeLineContent {

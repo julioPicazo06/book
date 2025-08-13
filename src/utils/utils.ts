@@ -1,3 +1,5 @@
+import { logger } from './logger';
+
 export const isVisibleLanguage = (whereIAm: string) : void => {
     const objWehereIAM = {
         "menu": {
@@ -27,7 +29,7 @@ export const isVisibleLanguage = (whereIAm: string) : void => {
     const isVisible = section ? section.isVisible : false;
     
     localStorage.setItem('WhereIAm', isVisible.toString());
-    console.log(localStorage.getItem('WhereIAm'));
+    logger.log(localStorage.getItem('WhereIAm'));
 }
 
 export const getWhereIAm = () : boolean => {

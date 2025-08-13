@@ -1,7 +1,8 @@
 
-import { useState } from 'react'
+import React, { FC, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { logger } from 'utils/logger';
 import { getAlertMessage, getFormData } from 'data/formData';
 import emailjs from 'emailjs-com';
 import useLocalStorage from 'hooks/useLocalStorage';
@@ -66,7 +67,7 @@ const Form = ({ formContent }: { formContent: formData }) => {
 
     emailjs.send('service_wb6kmcb', 'template_8feakmf', templateParams, 'ST0h3lqQUy-da7Y-j')
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
+        logger.log('SUCCESS!', response.status, response.text);
         setsuccess(response.text);
         setShowAlert(true);
         setTimeout(() => {
@@ -74,12 +75,12 @@ const Form = ({ formContent }: { formContent: formData }) => {
         }, 5000);
         setLoader(false);
       }, (error) => {
-        console.log('FAILED...', error);
+        logger.log('FAILED...', error);
       });
   };
 
 
-  console.log('formContent', formContent);
+  logger.log('formContent', formContent);
 
 
   return (

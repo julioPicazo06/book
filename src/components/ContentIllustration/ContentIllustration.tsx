@@ -11,35 +11,31 @@ import { useSelector, useDispatch} from 'react-redux';
 import { RootState } from 'store/store';
 import useLocalStorage from 'hooks/useLocalStorage';
 import { isVisibleLanguage } from 'utils/utils';
+import { logger } from 'utils/logger';
 
 
 
 
 const ContenidoIllustracion:FC<PropsIllustracion> = ({handleClose}:PropsIllustracion):JSX.Element => {
   const dispatch = useDispatch();
-  // const { param:lang } = useParams<{param: string}>();
-  const [lang] = useLocalStorage<string>('lang')
-
+  const [lang] = useLocalStorage<string>('lang');
+  const contentIllustrationS = useSelector((state: RootState)=> state.illustration);
 
   useEffect(() => {
-    console.log('[ContentIllustration] useEffect ejecutado', lang);
-    // Solo pedir si no hay datos en el store
+    logger.log('[ContentIllustration] useEffect ejecutado', lang);
+    
+    // Usar la misma lógica simple que funciona en ContentProyects
     isVisibleLanguage('illustration');
-    if (!Array.isArray(contentIllustrationS.img) || contentIllustrationS.img.length === 0) {
-      fetchAndDispatch({
-        url : endpoints['illustration'] ,
-        staticContent: getJobsTimeLineContent(lang) as any,
-        action: setIllustration,
-        dispatch,
-        flag: true,
-        lenguage: lang
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lang]);
-
-  const contentIllustrationS = useSelector((state: RootState)=> state.illustration)
-
+    
+    fetchAndDispatch({
+      url : endpoints['illustration'] ,
+      staticContent: getJobsTimeLineContent(lang) as any,
+      action: setIllustration,
+      dispatch,
+      flag: true,
+      lenguage: lang
+    });
+  }, [lang, dispatch]);
 
 
 interface Works {

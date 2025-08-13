@@ -14,7 +14,7 @@ const StyledPaper = styled(Paper)`
   font-family: 'Oswald';
 `;
 
-const TimeLineGeneral: FC<TimeLineContentModel> = ({ name, date, position, viewDate }: TimeLineContentModel) => {
+const TimeLineGeneral: FC<TimeLineContentModel> = ({ name, date, position, viewDate, current }: TimeLineContentModel) => {
 
     return (
         <TimelineItem className="mouse">
@@ -40,7 +40,9 @@ const TimeLineGeneral: FC<TimeLineContentModel> = ({ name, date, position, viewD
             </TimelineSeparator>
             <TimelineContent >
                 <StyledPaper elevation={3}>
-                    <h3> {name}</h3>
+                    <h3> {name}  { current ? "(Trabajo actual)" : ''} 
+
+                    </h3>
                     <p>{position}</p>
                 </StyledPaper>
             </TimelineContent>

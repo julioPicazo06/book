@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchAndDispatch } from 'utils/fetchAndDispatch'
 import { RootState } from 'store/store'
 import useLocalStorage from 'hooks/useLocalStorage'
+import { logger } from 'utils/logger'
 
 
 const ContenidoProyectos: FC<PropsContent> = ({
@@ -21,7 +22,7 @@ const ContenidoProyectos: FC<PropsContent> = ({
   const [lang] = useLocalStorage<string>('lang')
 
   useEffect(() => {
-    console.log('[ContentProyects] useEffect ejecutado', lang);
+    logger.log('[ContentProyects] useEffect ejecutado', lang);
     fetchAndDispatch({
       url: endpoints['contentWeb'],
       staticContent: getWebContent(lang) as any,

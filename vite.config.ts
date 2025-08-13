@@ -32,6 +32,14 @@ export default defineConfig(({ mode }) => {
           main: path.resolve(__dirname, 'index.html'),
         },
       },
+      // Eliminar console.log en producción
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: mode === 'production',
+          drop_debugger: mode === 'production',
+        },
+      },
     },
     publicDir: 'public',
   }

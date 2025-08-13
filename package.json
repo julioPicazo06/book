@@ -38,6 +38,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.27.0",
     "react-scroll": "^1.9.3",
+    "redux": "5.0.1",
     "sass": "^1.79.4",
     "styled-components": "^6.1.19",
     "tough-cookie": "^5.1.2",
@@ -99,6 +100,7 @@
     "pngquant-bin": "9.0.0",
     "replace-in-file": "^8.3.0",
     "serve": "^14.2.4",
+    "terser": "5.43.1",
     "url-loader": "^4.1.1",
     "vite": "^6.3.5"
   }

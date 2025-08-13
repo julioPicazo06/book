@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react';
+import { logger } from 'utils/logger';
+import { Content } from 'components/StylesComponents/ContentStyles';
 import { Cover } from '../cover/Cover'
 import { MenuGeneral } from 'components/GeneralMenu/GeneralMenu'
 import {  coverColors, coverColorsGreens } from 'data/colorData';
@@ -27,7 +29,7 @@ export const Menu = () => {
 
     
     useEffect(() => {
-        console.log('[GeneralMenu] useEffect ejecutado', lang);
+        logger.info('[GeneralMenu] useEffect ejecutado', lang);
         isVisibleLanguage('menu');
         
         // Cargar datos con manejo de errores
@@ -53,7 +55,7 @@ export const Menu = () => {
 
                 setIsDataLoaded(true);
             } catch (error) {
-                console.error('Error loading data:', error);
+                logger.error('Error loading data:', error);
                 // Si hay error, usar datos estáticos
                 dispatch(setCover(getCoverData(lang)));
                 dispatch(setMenu(getMenuData(lang)));
